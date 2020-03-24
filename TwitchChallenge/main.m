@@ -7,8 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Avatar.h"
+#import "ConsoleIO.h"
 
 void initializeAvatar() {
+  
+    ConsoleIO *consoleIOObj = [ConsoleIO sharedConsoleIOInstance];
     NSArray *arguments = [[NSProcessInfo processInfo] arguments];
     if (([arguments count] != 0) && ([arguments count] > 1)) {
       //Arguments at [0] is the path for the binary
@@ -24,6 +27,7 @@ void initializeAvatar() {
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
+    // ----- Intialize the game -----
     initializeAvatar();
   }
   return 0;

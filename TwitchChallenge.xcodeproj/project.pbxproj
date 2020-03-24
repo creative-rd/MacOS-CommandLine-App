@@ -13,6 +13,7 @@
 		D3864AA824297E8400A61045 /* AvatarParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AA724297E8400A61045 /* AvatarParser.m */; };
 		D3864AAD2429949100A61045 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AAC2429949100A61045 /* GameModel.m */; };
 		D3864AB02429970A00A61045 /* AvatarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AAF2429970A00A61045 /* AvatarModel.m */; };
+		D3864AB42429EDD000A61045 /* ConsoleIO.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AB32429EDD000A61045 /* ConsoleIO.m */; };
 		D3EBEDED24269DD000D25015 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBEDEC24269DD000D25015 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		D3864AAC2429949100A61045 /* GameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 		D3864AAE2429970A00A61045 /* AvatarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarModel.h; sourceTree = "<group>"; };
 		D3864AAF2429970A00A61045 /* AvatarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarModel.m; sourceTree = "<group>"; };
+		D3864AB22429EDD000A61045 /* ConsoleIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsoleIO.h; sourceTree = "<group>"; };
+		D3864AB32429EDD000A61045 /* ConsoleIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsoleIO.m; sourceTree = "<group>"; };
 		D3EBEDE924269DD000D25015 /* TwitchChallenge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TwitchChallenge; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBEDEC24269DD000D25015 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +111,15 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		D3864AB12429EDB600A61045 /* CommandLine */ = {
+			isa = PBXGroup;
+			children = (
+				D3864AB22429EDD000A61045 /* ConsoleIO.h */,
+				D3864AB32429EDD000A61045 /* ConsoleIO.m */,
+			);
+			path = CommandLine;
+			sourceTree = "<group>";
+		};
 		D3EBEDE024269DD000D25015 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 			children = (
 				D3EBEDEC24269DD000D25015 /* main.m */,
 				D3864AA924297FC800A61045 /* Home */,
+				D3864AB12429EDB600A61045 /* CommandLine */,
 				D3864AAA2429946D00A61045 /* DataModel */,
 				D3864AA524297E6200A61045 /* Parser */,
 				D3864A8B242960AC00A61045 /* Resources */,
@@ -235,6 +248,7 @@
 				D3864A8A2429485200A61045 /* Avatar.m in Sources */,
 				D3864AAD2429949100A61045 /* GameModel.m in Sources */,
 				D3864AB02429970A00A61045 /* AvatarModel.m in Sources */,
+				D3864AB42429EDD000A61045 /* ConsoleIO.m in Sources */,
 				D3EBEDED24269DD000D25015 /* main.m in Sources */,
 				D3864AA824297E8400A61045 /* AvatarParser.m in Sources */,
 			);
