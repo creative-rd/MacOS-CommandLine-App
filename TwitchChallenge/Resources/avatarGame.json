@@ -1,0 +1,1719 @@
+[
+    {
+        "name": "World of Warcraft",
+        "root": "1",
+        "gameId": 1,
+        "avatars": [
+            {
+                "name": "Arthas",
+                "url": "1/arthas.png"
+            },
+            {
+                "name": "Blackhand",
+                "url": "1/Blackhand.png"
+            },
+            {
+                "name": "Chen",
+                "url": "1/Chen.png"
+            },
+            {
+                "name": "Chen 2",
+                "url": "1/TaranZhu.png"
+            },
+            {
+                "name": "Durotan",
+                "url": "1/durotan.png"
+            },
+            {
+                "name": "Fenris",
+                "url": "1/fenris.png"
+            },
+            {
+                "name": "Gul'dan",
+                "url": "1/necro.png"
+            },
+            {
+                "name": "Gul'dan 2",
+                "url": "1/guldan.png"
+            },
+            {
+                "name": "Illidan",
+                "url": "1/illidan.png"
+            },
+            {
+                "name": "Jaina",
+                "url": "1/jaina.png"
+            },
+            {
+                "name": "Khadgar",
+                "url": "1/khadgar.png"
+            },
+            {
+                "name": "Malfurion",
+                "url": "1/malfurion.png"
+            },
+            {
+                "name": "Paladin",
+                "url": "1/Paladin.png"
+            },
+            {
+                "name": "Priest",
+                "url": "1/priest.png"
+            },
+            {
+                "name": "Sylvanas",
+                "url": "1/sylvanas.png"
+            },
+            {
+                "name": "Sylvanas 2",
+                "url": "1/Sylvannas.png"
+            },
+            {
+                "name": "Thrall",
+                "url": "1/Thrall.png"
+            },
+            {
+                "name": "Tauren",
+                "url": "1/tauren.png"
+            },
+            {
+                "name": "Uther",
+                "url": "1/uther.png"
+            },
+            {
+                "name": "Varian Wrynn",
+                "url": "1/VarianWrynn.png"
+            },
+            {
+                "name": "Yrel",
+                "url": "1/yrel.png"
+            }
+        ]
+    },
+    {
+        "name": "Grand Theft Auto V",
+        "root": "496",
+        "gameId": 496,
+        "avatars": [
+            {
+                "name": "Chop",
+                "url": "496/Chop.png"
+            },
+            {
+                "name": "Franklin",
+                "url": "496/Franklin.png"
+            },
+            {
+                "name": "Jimmy",
+                "url": "496/Jimmy.png"
+            },
+            {
+                "name": "Michael",
+                "url": "496/Michael.png"
+            },
+            {
+                "name": "Trevor",
+                "url": "496/Trevor.png"
+            }
+        ]
+    },
+    {
+        "name": "EVE Online",
+        "root": "12",
+        "gameId": 12,
+        "avatars": [
+            {
+                "name": "Astero",
+                "url": "12/astero.png"
+            },
+            {
+                "name": "Claw",
+                "url": "12/claw.png"
+            },
+            {
+                "name": "Crusader",
+                "url": "12/crusader.png"
+            },
+            {
+                "name": "Daredevil",
+                "url": "12/daredevil.png"
+            },
+            {
+                "name": "Dramiel",
+                "url": "12/dramiel.png"
+            },
+            {
+                "name": "Raptor",
+                "url": "12/raptor.png"
+            },
+            {
+                "name": "Taranis",
+                "url": "12/taranis.png"
+            },
+            {
+                "name": "Venture",
+                "url": "12/venture.png"
+            },
+            {
+                "name": "Worm",
+                "url": "12/worm.png"
+            }
+        ]
+    },
+    {
+        "name": "Robocraft",
+        "root": "480",
+        "gameId": 480,
+        "avatars": [
+            {
+                "name": "Alignment Rectifier",
+                "url": "480/alignmentrectifier.jpg"
+            },
+            {
+                "name": "Apache",
+                "url": "480/apache.jpg"
+            },
+            {
+                "name": "Hex",
+                "url": "480/hex.jpg"
+            },
+            {
+                "name": "Lunar",
+                "url": "480/lunar.jpg"
+            },
+            {
+                "name": "Protonium Towers",
+                "url": "480/protoniumtowers.jpg"
+            },
+            {
+                "name": "Scorpion",
+                "url": "480/scorpion.jpg"
+            },
+            {
+                "name": "Starter",
+                "url": "480/starter.jpg"
+            },
+            {
+                "name": "T5 Cobra Robot",
+                "url": "480/t5cobrarobot.jpg"
+            },
+            {
+                "name": "T7 Tesla Dart",
+                "url": "480/t7tesladart.jpg"
+            },
+            {
+                "name": "Wolf Copter",
+                "url": "480/wolfcopter.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Magicka: Wizard Wars",
+        "root": "618",
+        "gameId": 618,
+        "avatars": [
+            {
+                "name": "Axe",
+                "url": "618/axe.png"
+            },
+            {
+                "name": "Goblin",
+                "url": "618/goblin.png"
+            },
+            {
+                "name": "Grimnir",
+                "url": "618/grimnir.png"
+            },
+            {
+                "name": "Helrider",
+                "url": "618/helrider.png"
+            },
+            {
+                "name": "Pirate",
+                "url": "618/pirate.png"
+            },
+            {
+                "name": "Red",
+                "url": "618/red.png"
+            },
+            {
+                "name": "Shaman",
+                "url": "618/shaman.png"
+            },
+            {
+                "name": "Sparkles",
+                "url": "618/sparkles.png"
+            },
+            {
+                "name": "Steampunk",
+                "url": "618/steampunk.png"
+            },
+            {
+                "name": "Valkyrie",
+                "url": "618/valkyrie.png"
+            }
+      ]
+    },
+    {
+        "name": "Minecraft",
+        "root": "432",
+        "gameId": 432,
+        "avatars": [
+            {
+                "name": "Steve",
+                "url": "432/minecraft.png"
+            },
+            {
+                "name": "Cow",
+                "url": "432/minecraft1.png"
+            },
+            {
+                "name": "Skeleton",
+                "url": "432/minecraft2.png"
+            },
+            {
+                "name": "Enderman",
+                "url": "432/minecraft3.png"
+            },
+            {
+                "name": "Steve 2",
+                "url": "432/minecraft4.png"
+            },
+            {
+                "name": "Pig",
+                "url": "432/minecraft5.png"
+            },
+            {
+                "name": "Creeper",
+                "url": "432/minecraft6.png"
+            },
+            {
+                "name": "Pickaxe",
+                "url": "432/minecraft7.png"
+            },
+            {
+                "name": "Sword",
+                "url": "432/minecraft8.png"
+            },
+            {
+                "name": "Health",
+                "url": "432/minecraft9.png"
+            },
+            {
+                "name": "Sheep",
+                "url": "432/minecraft10.png"
+            },
+            {
+                "name": "Chicken",
+                "url": "432/minecraft13.png"
+            },
+            {
+                "name": "Minecraft Mob",
+                "url": "432/minecraft11.png"
+            },
+            {
+                "name": "Minecraft Mob 2",
+                "url": "432/minecraft12.png"
+            },
+            {
+                "name": "Villager",
+                "url": "432/minecraft14.png"
+            },
+            {
+                "name": "Dirt",
+                "url": "432/minecraft15.png"
+            }
+        ]
+    },
+    {
+        "name": "Evolve",
+        "root": "473",
+        "gameId": 473,
+        "avatars": [
+            {
+                "name": "Bucket",
+                "url": "473/bucket.jpg"
+            },
+            {
+                "name": "Daisy",
+                "url": "473/daisy.jpg"
+            },
+            {
+                "name": "Goliath",
+                "url": "473/goliath.jpg"
+            },
+            {
+                "name": "Griffin",
+                "url": "473/griffin.jpg"
+            },
+            {
+                "name": "Hyde",
+                "url": "473/hyde.jpg"
+            },
+            {
+                "name": "Kraken",
+                "url": "473/kraken.jpg"
+            },
+            {
+                "name": "Lazarus",
+                "url": "473/lazarus.jpg"
+            },
+            {
+                "name": "Maggie",
+                "url": "473/maggie.jpg"
+            },
+            {
+                "name": "Markov",
+                "url": "473/markov.jpg"
+            },
+            {
+                "name": "Val",
+                "url": "473/val.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Diablo 3",
+        "root": "414",
+        "gameId": 414,
+        "avatars": [
+            {
+                "name": "Barbarian_0",
+                "url": "414/barbarian_0.png"
+            },
+            {
+                "name": "Barbarian_1",
+                "url": "414/barbarian_1.png"
+            },
+            {
+                "name": "Crusader_0",
+                "url": "414/crusader_0.png"
+            },
+            {
+                "name": "Crusader_1",
+                "url": "414/crusader_1.png"
+            },
+            {
+                "name": "Demon-Hunter_0",
+                "url": "414/demon-hunter_0.png"
+            },
+            {
+                "name": "Demon-Hunter_1",
+                "url": "414/demon-hunter_1.png"
+            },
+            {
+                "name": "Monk_0",
+                "url": "414/monk_0.png"
+            },
+            {
+                "name": "Monk_1",
+                "url": "414/monk_1.png"
+            },
+            {
+                "name": "Witch-Doctor_0",
+                "url": "414/witch-doctor_0.png"
+            },
+            {
+                "name": "Witch-Doctor_1",
+                "url": "414/witch-doctor_1.png"
+            },
+            {
+                "name": "Wizard_0",
+                "url": "414/wizard_0.png"
+            },
+            {
+                "name": "Wizard_1",
+                "url": "414/wizard_1.png"
+            }
+        ]
+    },
+    {
+        "name": "League of Legends",
+        "root": "341",
+        "gameId": 341,
+        "avatars": [
+            {
+                "name": "Aatrox",
+                "url": "341/Aatrox-0.jpg"
+            },
+            {
+                "name": "Ahri",
+                "url": "341/Ahri-0.jpg"
+            },
+            {
+                "name": "Akali",
+                "url": "341/Akali-0.jpg"
+            },
+            {
+                "name": "Alistar",
+                "url": "341/Alistar-0.jpg"
+            },
+            {
+                "name": "Amumu",
+                "url": "341/Amumu-0.jpg"
+            },
+            {
+                "name": "Anivia",
+                "url": "341/Anivia-0.jpg"
+            },
+            {
+                "name": "Annie",
+                "url": "341/Annie-0.jpg"
+            },
+            {
+                "name": "Ashe",
+                "url": "341/Ashe-0.jpg"
+            },
+            {
+                "name": "Aurelion Sol",
+                "url": "341/AurelionSol-0.jpg"
+            },
+            {
+                "name": "Azir",
+                "url": "341/Azir-0.jpg"
+            },
+            {
+                "name": "Bard",
+                "url": "341/Bard-0.jpg"
+            },
+            {
+                "name": "Blitzcrank",
+                "url": "341/Blitzcrank-0.jpg"
+            },
+            {
+                "name": "Brand",
+                "url": "341/Brand-0.jpg"
+            },
+            {
+                "name": "Braum",
+                "url": "341/Braum-0.jpg"
+            },
+            {
+                "name": "Caitlyn",
+                "url": "341/Caitlyn-0.jpg"
+            },
+            {
+                "name": "Camille",
+                "url": "341/Camille-0.jpg"
+            },
+            {
+                "name": "Cassiopeia",
+                "url": "341/Cassiopeia-0.jpg"
+            },
+            {
+                "name": "Chogath",
+                "url": "341/Chogath-0.jpg"
+            },
+            {
+                "name": "Corki",
+                "url": "341/Corki-0.jpg"
+            },
+            {
+                "name": "Darius",
+                "url": "341/Darius-0.jpg"
+            },
+            {
+                "name": "Diana",
+                "url": "341/Diana-0.jpg"
+            },
+            {
+                "name": "Draven",
+                "url": "341/Draven-0.jpg"
+            },
+            {
+                "name": "Drmundo",
+                "url": "341/DrMundo-0.jpg"
+            },
+            {
+                "name": "Ekko",
+                "url": "341/Ekko-0.jpg"
+            },
+            {
+                "name": "Elise",
+                "url": "341/Elise-0.jpg"
+            },
+            {
+                "name": "Evelynn",
+                "url": "341/Evelynn-0.jpg"
+            },
+            {
+                "name": "Ezreal",
+                "url": "341/Ezreal-0.jpg"
+            },
+            {
+                "name": "Fiddlesticks",
+                "url": "341/Fiddlesticks-0.jpg"
+            },
+            {
+                "name": "Fiora",
+                "url": "341/Fiora-0.jpg"
+            },
+            {
+                "name": "Fizz",
+                "url": "341/Fizz-0.jpg"
+            },
+            {
+                "name": "Galio",
+                "url": "341/Galio-0.jpg"
+            },
+            {
+                "name": "Gangplank",
+                "url": "341/Gangplank-0.jpg"
+            },
+            {
+                "name": "Garen",
+                "url": "341/Garen-0.jpg"
+            },
+            {
+                "name": "Gnar",
+                "url": "341/Gnar-0.jpg"
+            },
+            {
+                "name": "Gragas",
+                "url": "341/Gragas-0.jpg"
+            },
+            {
+                "name": "Graves",
+                "url": "341/Graves-0.jpg"
+            },
+            {
+                "name": "Hecarim",
+                "url": "341/Hecarim-0.jpg"
+            },
+            {
+                "name": "Heimerdinger",
+                "url": "341/Heimerdinger-0.jpg"
+            },
+            {
+                "name": "Illaoi",
+                "url": "341/Illaoi-0.jpg"
+            },
+            {
+                "name": "Irelia",
+                "url": "341/Irelia-0.jpg"
+            },
+            {
+                "name": "Ivern",
+                "url": "341/Ivern-0.jpg"
+            },
+            {
+                "name": "Janna",
+                "url": "341/Janna-0.jpg"
+            },
+            {
+                "name": "Jarvaniv",
+                "url": "341/JarvanIV-0.jpg"
+            },
+            {
+                "name": "Jax",
+                "url": "341/Jax-0.jpg"
+            },
+            {
+                "name": "Jayce",
+                "url": "341/Jayce-0.jpg"
+            },
+            {
+                "name": "Jhin",
+                "url": "341/Jhin-0.jpg"
+            },
+            {
+                "name": "Jinx",
+                "url": "341/Jinx-0.jpg"
+            },
+            {
+                "name": "Kalista",
+                "url": "341/Kalista-0.jpg"
+            },
+            {
+                "name": "Karma",
+                "url": "341/Karma-0.jpg"
+            },
+            {
+                "name": "Karthus",
+                "url": "341/Karthus-0.jpg"
+            },
+            {
+                "name": "Kassadin",
+                "url": "341/Kassadin-0.jpg"
+            },
+            {
+                "name": "Katarina",
+                "url": "341/katarina-0.jpg"
+            },
+            {
+                "name": "Kayle",
+                "url": "341/Kayle-0.jpg"
+            },
+            {
+                "name": "Kennen",
+                "url": "341/Kennen-0.jpg"
+            },
+            {
+                "name": "Khazix",
+                "url": "341/Khazix-0.jpg"
+            },
+            {
+                "name": "Kindred",
+                "url": "341/Kindred-0.jpg"
+            },
+            {
+                "name": "Kled",
+                "url": "341/Kled-0.jpg"
+            },
+            {
+                "name": "Kogmaw",
+                "url": "341/KogMaw-0.jpg"
+            },
+            {
+                "name": "Leblanc",
+                "url": "341/Leblanc-0.jpg"
+            },
+            {
+                "name": "Leesin",
+                "url": "341/LeeSin-0.jpg"
+            },
+            {
+                "name": "Leona",
+                "url": "341/Leona-0.jpg"
+            },
+            {
+                "name": "Lissandra",
+                "url": "341/Lissandra-0.jpg"
+            },
+            {
+                "name": "Lucian",
+                "url": "341/Lucian-0.jpg"
+            },
+            {
+                "name": "Lulu",
+                "url": "341/Lulu-0.jpg"
+            },
+            {
+                "name": "Lux",
+                "url": "341/Lux-0.jpg"
+            },
+            {
+                "name": "Malphite",
+                "url": "341/Malphite-0.jpg"
+            },
+            {
+                "name": "Malzahar",
+                "url": "341/Malzahar-0.jpg"
+            },
+            {
+                "name": "Maokai",
+                "url": "341/Maokai-0.jpg"
+            },
+            {
+                "name": "Masteryi",
+                "url": "341/Masteryi-0.jpg"
+            },
+            {
+                "name": "Missfortune",
+                "url": "341/MissFortune-0.jpg"
+            },
+            {
+                "name": "Monkeyking",
+                "url": "341/MonkeyKing-0.jpg"
+            },
+            {
+                "name": "Mordekaiser",
+                "url": "341/Mordekaiser-0.jpg"
+            },
+            {
+                "name": "Morgana",
+                "url": "341/Morgana-0.jpg"
+            },
+            {
+                "name": "Nami",
+                "url": "341/Nami-0.jpg"
+            },
+            {
+                "name": "Nasus",
+                "url": "341/Nasus-0.jpg"
+            },
+            {
+                "name": "Nautilus",
+                "url": "341/Nautilus-0.jpg"
+            },
+            {
+                "name": "Nidalee",
+                "url": "341/Nidalee-0.jpg"
+            },
+            {
+                "name": "Nocturne",
+                "url": "341/Nocturne-0.jpg"
+            },
+            {
+                "name": "Nunu",
+                "url": "341/Nunu-0.jpg"
+            },
+            {
+                "name": "Olaf",
+                "url": "341/Olaf-0.jpg"
+            },
+            {
+                "name": "Orianna",
+                "url": "341/Orianna-0.jpg"
+            },
+            {
+                "name": "Pantheon",
+                "url": "341/Pantheon-0.jpg"
+            },
+            {
+                "name": "Poppy",
+                "url": "341/Poppy-0.jpg"
+            },
+            {
+                "name": "Quinn",
+                "url": "341/Quinn-0.jpg"
+            },
+            {
+                "name": "Rammus",
+                "url": "341/Rammus-0.jpg"
+            },
+            {
+                "name": "Reksai",
+                "url": "341/RekSai-0.jpg"
+            },
+            {
+                "name": "Renekton",
+                "url": "341/Renekton-0.jpg"
+            },
+            {
+                "name": "Rengar",
+                "url": "341/Rengar-0.jpg"
+            },
+            {
+                "name": "Riven",
+                "url": "341/Riven-0.jpg"
+            },
+            {
+                "name": "Rumble",
+                "url": "341/Rumble-0.jpg"
+            },
+            {
+                "name": "Ryze",
+                "url": "341/Ryze-0.jpg"
+            },
+            {
+                "name": "Sejuani",
+                "url": "341/Sejuani-0.jpg"
+            },
+            {
+                "name": "Shaco",
+                "url": "341/Shaco-0.jpg"
+            },
+            {
+                "name": "Shen",
+                "url": "341/Shen-0.jpg"
+            },
+            {
+                "name": "Shyvana",
+                "url": "341/Shyvana-0.jpg"
+            },
+            {
+                "name": "Singed",
+                "url": "341/Singed-0.jpg"
+            },
+            {
+                "name": "Sion",
+                "url": "341/Sion-0.jpg"
+            },
+            {
+                "name": "Sivir",
+                "url": "341/Sivir-0.jpg"
+            },
+            {
+                "name": "Skarner",
+                "url": "341/Skarner-0.jpg"
+            },
+            {
+                "name": "Sona",
+                "url": "341/Sona-0.jpg"
+            },
+            {
+                "name": "Soraka",
+                "url": "341/Soraka-0.jpg"
+            },
+            {
+                "name": "Swain",
+                "url": "341/Swain-0.jpg"
+            },
+            {
+                "name": "Syndra",
+                "url": "341/Syndra-0.jpg"
+            },
+            {
+                "name": "TahmKench",
+                "url": "341/TahmKench-0.jpg"
+            },
+            {
+                "name": "Talon",
+                "url": "341/Talon-0.jpg"
+            },
+            {
+                "name": "Taliyah",
+                "url": "341/Taliyah-0.jpg"
+            },
+            {
+                "name": "Taric",
+                "url": "341/Taric-0.jpg"
+            },
+            {
+                "name": "Teemo",
+                "url": "341/Teemo-0.jpg"
+            },
+            {
+                "name": "Thresh",
+                "url": "341/Thresh-0.jpg"
+            },
+            {
+                "name": "Tristana",
+                "url": "341/Tristana-0.jpg"
+            },
+            {
+                "name": "Trundle",
+                "url": "341/Trundle-0.jpg"
+            },
+            {
+                "name": "Tryndamere",
+                "url": "341/Tryndamere-0.jpg"
+            },
+            {
+                "name": "Twistedfate",
+                "url": "341/TwistedFate-0.jpg"
+            },
+            {
+                "name": "Twitch",
+                "url": "341/Twitch-0.jpg"
+            },
+            {
+                "name": "Udyr",
+                "url": "341/Udyr-0.jpg"
+            },
+            {
+                "name": "Urgot",
+                "url": "341/Urgot-0.jpg"
+            },
+            {
+                "name": "Varus",
+                "url": "341/Varus-0.jpg"
+            },
+            {
+                "name": "Vayne",
+                "url": "341/Vayne-0.jpg"
+            },
+            {
+                "name": "Veigar",
+                "url": "341/Veigar-0.jpg"
+            },
+            {
+                "name": "Velkoz",
+                "url": "341/Velkoz-0.jpg"
+            },
+            {
+                "name": "Vi",
+                "url": "341/Vi-0.jpg"
+            },
+            {
+                "name": "Viktor",
+                "url": "341/Viktor-0.jpg"
+            },
+            {
+                "name": "Vladimir",
+                "url": "341/Vladimir-0.jpg"
+            },
+            {
+                "name": "Volibear",
+                "url": "341/Volibear-0.jpg"
+            },
+            {
+                "name": "Warwick",
+                "url": "341/Warwick-0.jpg"
+            },
+            {
+                "name": "Wukong",
+                "url": "341/Wukong-0.jpg"
+            },
+            {
+                "name": "Xerath",
+                "url": "341/Xerath-0.jpg"
+            },
+            {
+                "name": "Xinzhao",
+                "url": "341/XinZhao-0.jpg"
+            },
+            {
+                "name": "Yasuo",
+                "url": "341/Yasuo-0.jpg"
+            },
+            {
+                "name": "Yorick",
+                "url": "341/Yorick-0.jpg"
+            },
+            {
+                "name": "Zac",
+                "url": "341/Zac-0.jpg"
+            },
+            {
+                "name": "Zed",
+                "url": "341/Zed-0.jpg"
+            },
+            {
+                "name": "Ziggs",
+                "url": "341/Ziggs-0.jpg"
+            },
+            {
+                "name": "Zilean",
+                "url": "341/Zilean-0.jpg"
+            },
+            {
+                "name": "Zyra",
+                "url": "341/Zyra-0.jpg"
+            }
+        ]
+    },
+    {
+        "name": "WildStar",
+        "root": "454",
+        "gameId": 454,
+        "avatars": [
+            {
+                "name": "Human",
+                "url": "454/1.png"
+            },
+            {
+                "name": "Aurin",
+                "url": "454/2.png"
+            },
+            {
+                "name": "Granok",
+                "url": "454/3.png"
+            },
+            {
+                "name": "Chua",
+                "url": "454/4.png"
+            },
+            {
+                "name": "Phineas T. Rotostar",
+                "url": "454/5.png"
+            },
+            {
+                "name": "Granok 2",
+                "url": "454/6.png"
+            },
+            {
+                "name": "Kit Brinny",
+                "url": "454/7.png"
+            },
+            {
+                "name": "Cassian",
+                "url": "454/8.png"
+            }
+        ]
+    },
+    {
+        "name": "Smite",
+        "root": "458",
+        "gameId": 458,
+        "avatars": [
+            {
+                "name": "Agni",
+                "url": "458/agni.png"
+            },
+            {
+                "name": "Ahmuzencab",
+                "url": "458/ahmuzencab.png"
+            },
+            {
+                "name": "Ahpuch",
+                "url": "458/ahpuch.png"
+            },
+            {
+                "name": "Anhur",
+                "url": "458/anhur.png"
+            },
+            {
+                "name": "Anubis",
+                "url": "458/anubis.png"
+            },
+            {
+                "name": "Aokuang",
+                "url": "458/aokuang.png"
+            },
+            {
+                "name": "Aphrodite",
+                "url": "458/aphrodite.png"
+            },
+            {
+                "name": "Apollo",
+                "url": "458/apollo.png"
+            },
+            {
+                "name": "Arachnid",
+                "url": "458/arachnid.png"
+            },
+            {
+                "name": "Ares",
+                "url": "458/ares.png"
+            },
+            {
+                "name": "Artemis",
+                "url": "458/artemis.png"
+            },
+            {
+                "name": "Athena",
+                "url": "458/athena.png"
+            },
+            {
+                "name": "Awilix",
+                "url": "458/awilix.png"
+            },
+            {
+                "name": "Bacchus",
+                "url": "458/bacchus.png"
+            },
+            {
+                "name": "Bakasura",
+                "url": "458/bakasura.png"
+            },
+            {
+                "name": "Bastet",
+                "url": "458/bastet.png"
+            },
+            {
+                "name": "Bellona",
+                "url": "458/bellona.png"
+            },
+            {
+                "name": "Cabrakan",
+                "url": "458/cabrakan.png"
+            },
+            {
+                "name": "Chaac",
+                "url": "458/chaac.png"
+            },
+            {
+                "name": "Change",
+                "url": "458/change.png"
+            },
+            {
+                "name": "Chiron",
+                "url": "458/chiron.png"
+            },
+            {
+                "name": "Chronos",
+                "url": "458/chronos.png"
+            },
+            {
+                "name": "Cupid",
+                "url": "458/cupid.png"
+            },
+            {
+                "name": "Fenrir",
+                "url": "458/fenrir.png"
+            },
+            {
+                "name": "Freya",
+                "url": "458/freya.png"
+            },
+            {
+                "name": "Geb",
+                "url": "458/geb.png"
+            },
+            {
+                "name": "Guanyu",
+                "url": "458/guanyu.png"
+            },
+            {
+                "name": "Hades",
+                "url": "458/hades.png"
+            },
+            {
+                "name": "Hebo",
+                "url": "458/hebo.png"
+            },
+            {
+                "name": "Hel",
+                "url": "458/hel.png"
+            },
+            {
+                "name": "Hercules",
+                "url": "458/hercules.png"
+            },
+            {
+                "name": "Houyi",
+                "url": "458/houyi.png"
+            },
+            {
+                "name": "Hunbatz",
+                "url": "458/hunbatz.png"
+            },
+            {
+                "name": "Isis",
+                "url": "458/isis.png"
+            },
+            {
+                "name": "Janus",
+                "url": "458/janus.png"
+            },
+            {
+                "name": "Kali",
+                "url": "458/kali.png"
+            },
+            {
+                "name": "Khepri",
+                "url": "458/khepri.png"
+            },
+            {
+                "name": "Kukulkan",
+                "url": "458/kukulkan.png"
+            },
+            {
+                "name": "Kumbhakarna",
+                "url": "458/kumbhakarna.png"
+            },
+            {
+                "name": "Loki",
+                "url": "458/loki.png"
+            },
+            {
+                "name": "Medusa",
+                "url": "458/medusa.png"
+            },
+            {
+                "name": "Mercury",
+                "url": "458/mercury.png"
+            },
+            {
+                "name": "Neith",
+                "url": "458/neith.png"
+            },
+            {
+                "name": "Nemesis",
+                "url": "458/nemesis.png"
+            },
+            {
+                "name": "Nezha",
+                "url": "458/nezha.png"
+            },
+            {
+                "name": "Nox",
+                "url": "458/nox.png"
+            },
+            {
+                "name": "Nuwa",
+                "url": "458/nuwa.png"
+            },
+            {
+                "name": "Odin",
+                "url": "458/odin.png"
+            },
+            {
+                "name": "Osiris",
+                "url": "458/osiris.png"
+            },
+            {
+                "name": "Poseidon",
+                "url": "458/poseidon.png"
+            },
+            {
+                "name": "Ra",
+                "url": "458/ra.png"
+            },
+            {
+                "name": "Rama",
+                "url": "458/rama.png"
+            },
+            {
+                "name": "Ratatoskr",
+                "url": "458/ratatoskr.png"
+            },
+            {
+                "name": "Ravana",
+                "url": "458/ravana.png"
+            },
+            {
+                "name": "Scylla",
+                "url": "458/scylla.png"
+            },
+            {
+                "name": "Serqet",
+                "url": "458/serqet.png"
+            },
+            {
+                "name": "Sobek",
+                "url": "458/sobek.png"
+            },
+            {
+                "name": "Sol",
+                "url": "458/sol.png"
+            },
+            {
+                "name": "Sunwukong",
+                "url": "458/sunwukong.png"
+            },
+            {
+                "name": "Sylvanus",
+                "url": "458/sylvanus.png"
+            },
+            {
+                "name": "Thanatos",
+                "url": "458/thanatos.png"
+            },
+            {
+                "name": "Thor",
+                "url": "458/thor.png"
+            },
+            {
+                "name": "Tyr",
+                "url": "458/tyr.png"
+            },
+            {
+                "name": "Ullr",
+                "url": "458/ullr.png"
+            },
+            {
+                "name": "Vamana",
+                "url": "458/vamana.png"
+            },
+            {
+                "name": "Vulcan",
+                "url": "458/vulcan.png"
+            },
+            {
+                "name": "Xbalanque",
+                "url": "458/xbalanque.png"
+            },
+            {
+                "name": "XingTian",
+                "url": "458/xingtian.png"
+            },
+            {
+                "name": "Ymir",
+                "url": "458/ymir.png"
+            },
+            {
+                "name": "Zeus",
+                "url": "458/zeus.png"
+            },
+            {
+                "name": "Zhongkui",
+                "url": "458/zhongkui.png"
+            }
+        ]
+    },
+    {
+        "name": "Overwatch",
+        "root": "644",
+        "gameId": 644,
+        "avatars": [
+            {
+                "name": "Bastion",
+                "url": "644/bastion.jpg"
+            },
+            {
+                "name": "DVA",
+                "url": "644/dva.jpg"
+            },
+            {
+                "name": "Genji",
+                "url": "644/genji.jpg"
+            },
+            {
+                "name": "Hanzo",
+                "url": "644/hanzo.jpg"
+            },
+            {
+                "name": "Junkrat",
+                "url": "644/junkrat.jpg"
+            },
+            {
+                "name": "Lucio",
+                "url": "644/lucio.jpg"
+            },
+            {
+                "name": "McCree",
+                "url": "644/mccree.jpg"
+            },
+            {
+                "name": "Mei",
+                "url": "644/mei.jpg"
+            },
+            {
+                "name": "Mercy",
+                "url": "644/mercy.jpg"
+            },
+            {
+                "name": "Pharah",
+                "url": "644/pharah.jpg"
+            },
+            {
+                "name": "Reaper",
+                "url": "644/reaper.jpg"
+            },
+            {
+                "name": "Reinhardt",
+                "url": "644/reinhardt.jpg"
+            },
+            {
+                "name": "Roadhog",
+                "url": "644/roadhog.jpg"
+            },
+            {
+                "name": "Soldier76",
+                "url": "644/soldier76.jpg"
+            },
+            {
+                "name": "Symmetra",
+                "url": "644/symmetra.jpg"
+            },
+            {
+                "name": "Torbjorn",
+                "url": "644/torbjorn.jpg"
+            },
+            {
+                "name": "Tracer",
+                "url": "644/tracer.jpg"
+            },
+            {
+                "name": "Widowmaker",
+                "url": "644/widowmaker.jpg"
+            },
+            {
+                "name": "Winston",
+                "url": "644/winston.jpg"
+            },
+            {
+                "name": "Zarya",
+                "url": "644/zarya.jpg"
+            },
+            {
+                "name": "Zenyatta",
+                "url": "644/zenyatta.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Strife",
+        "root": "457",
+        "gameId": 457,
+        "avatars": [
+            {
+                "name": "Ace",
+                "url": "457/ace.jpg"
+            },
+            {
+                "name": "Bastion",
+                "url": "457/bastion.jpg"
+            },
+            {
+                "name": "Blazer",
+                "url": "457/blazer.jpg"
+            },
+            {
+                "name": "Bo",
+                "url": "457/bo.jpg"
+            },
+            {
+                "name": "Caprice",
+                "url": "457/caprice.jpg"
+            },
+            {
+                "name": "Carter",
+                "url": "457/carter.jpg"
+            },
+            {
+                "name": "Claudessa",
+                "url": "457/claudessa.jpg"
+            },
+            {
+                "name": "Fetterstone",
+                "url": "457/fetterstone.jpg"
+            },
+            {
+                "name": "Hale",
+                "url": "457/hale.jpg"
+            },
+            {
+                "name": "Harrower",
+                "url": "457/harrower.jpg"
+            },
+            {
+                "name": "Ladytinder",
+                "url": "457/ladytinder.jpg"
+            },
+            {
+                "name": "Malady",
+                "url": "457/malady.jpg"
+            },
+            {
+                "name": "Minerva",
+                "url": "457/minerva.jpg"
+            },
+            {
+                "name": "Moxie",
+                "url": "457/moxie.jpg"
+            },
+            {
+                "name": "Ray",
+                "url": "457/ray.jpg"
+            },
+            {
+                "name": "Rook",
+                "url": "457/rook.jpg"
+            },
+            {
+                "name": "Shank",
+                "url": "457/shank.jpg"
+            },
+            {
+                "name": "Trixie",
+                "url": "457/trixie.jpg"
+            },
+            {
+                "name": "Vermillion",
+                "url": "457/vermillion.jpg"
+            },
+            {
+                "name": "Vex",
+                "url": "457/vex.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Heroes of the Storm",
+        "root": "462",
+        "gameId": 462,
+        "avatars": [
+            {
+                "name": "Abathur",
+                "url": "462/abathur.png"
+            },
+            {
+                "name": "Anubarak",
+                "url": "462/anubarak.png"
+            },
+            {
+                "name": "Artanis",
+                "url": "462/artanis.png"
+            },
+            {
+                "name": "Arthas",
+                "url": "462/arthas.png"
+            },
+            {
+                "name": "Azmodan",
+                "url": "462/azmodan.png"
+            },
+            {
+                "name": "Brightwing",
+                "url": "462/brightwing.png"
+            },
+            {
+                "name": "Chen",
+                "url": "462/chen.png"
+            },
+            {
+                "name": "Chogall",
+                "url": "462/chogall.png"
+            },
+            {
+                "name": "Diablo",
+                "url": "462/diablo.png"
+            },
+            {
+                "name": "Etc",
+                "url": "462/etc.png"
+            },
+            {
+                "name": "Falstad",
+                "url": "462/falstad.png"
+            },
+            {
+                "name": "Gazlowe",
+                "url": "462/gazlowe.png"
+            },
+            {
+                "name": "Greymane",
+                "url": "462/greymane.png"
+            },
+            {
+                "name": "Illidan",
+                "url": "462/illidan.png"
+            },
+            {
+                "name": "Jaina",
+                "url": "462/jaina.png"
+            },
+            {
+                "name": "Johanna",
+                "url": "462/johanna.png"
+            },
+            {
+                "name": "Kaelthas",
+                "url": "462/kaelthas.png"
+            },
+            {
+                "name": "Kerrigan",
+                "url": "462/kerrigan.png"
+            },
+            {
+                "name": "Kharazim",
+                "url": "462/kharazim.png"
+            },
+            {
+                "name": "Leoric",
+                "url": "462/leoric.png"
+            },
+            {
+                "name": "Lili",
+                "url": "462/lili.png"
+            },
+            {
+                "name": "Lostvikings",
+                "url": "462/lostvikings.png"
+            },
+            {
+                "name": "Lt. Morales",
+                "url": "462/lt-morales.png"
+            },
+            {
+                "name": "Lunara",
+                "url": "462/lunara.png"
+            },
+            {
+                "name": "Malfurion",
+                "url": "462/malfurion.png"
+            },
+            {
+                "name": "Muradin",
+                "url": "462/muradin.png"
+            },
+            {
+                "name": "Murky",
+                "url": "462/murky.png"
+            },
+            {
+                "name": "Nazeebo",
+                "url": "462/nazeebo.png"
+            },
+            {
+                "name": "Nova",
+                "url": "462/nova.png"
+            },
+            {
+                "name": "Raynor",
+                "url": "462/raynor.png"
+            },
+            {
+                "name": "Rehgar",
+                "url": "462/rehgar.png"
+            },
+            {
+                "name": "Rexxar",
+                "url": "462/rexxar.png"
+            },
+            {
+                "name": "Sgthammer",
+                "url": "462/sgthammer.png"
+            },
+            {
+                "name": "Sonya",
+                "url": "462/sonya.png"
+            },
+            {
+                "name": "Stitches",
+                "url": "462/stitches.png"
+            },
+            {
+                "name": "Sylvanas",
+                "url": "462/sylvanas.png"
+            },
+            {
+                "name": "Tassadar",
+                "url": "462/tassadar.png"
+            },
+            {
+                "name": "The Butcher",
+                "url": "462/the-butcher.png"
+            },
+            {
+                "name": "Thrall",
+                "url": "462/thrall.png"
+            },
+            {
+                "name": "Tychus",
+                "url": "462/tychus.png"
+            },
+            {
+                "name": "Tyrande",
+                "url": "462/tyrande.png"
+            },
+            {
+                "name": "Tyrael",
+                "url": "462/tyrael.png"
+            },
+            {
+                "name": "Uther",
+                "url": "462/uther.png"
+            },
+            {
+                "name": "Valla",
+                "url": "462/valla.png"
+            },
+            {
+                "name": "Zagara",
+                "url": "462/zagara.png"
+            },
+            {
+                "name": "Zaratul",
+                "url": "462/zaratul.png"
+            }
+        ]
+    },
+    {
+        "name": "No Man's Sky",
+        "root": "682",
+        "gameId": 682,
+        "avatars": [
+            {
+                "name": "Ship",
+                "url": "682/avatar_01.jpg"
+            },
+            {
+                "name": "Alien",
+                "url": "682/avatar_02.jpg"
+            },
+            {
+                "name": "Killer Robot",
+                "url": "682/avatar_03.jpg"
+            },
+            {
+                "name": "Leggy Robot",
+                "url": "682/avatar_04.jpg"
+            },
+            {
+                "name": "Turtle",
+                "url": "682/avatar_05.jpg"
+            },
+            {
+                "name": "Adventurer",
+                "url": "682/avatar_06.jpg"
+            },
+            {
+                "name": "Ship 2",
+                "url": "682/avatar_07.jpg"
+            },
+            {
+                "name": "No Mans Sky",
+                "url": "682/avatar_08.jpg"
+            },
+            {
+                "name": "Aventurer 2",
+                "url": "682/avatar_09.jpg"
+            }
+        ]
+    }
+]
