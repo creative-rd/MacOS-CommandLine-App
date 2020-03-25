@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Avatar : NSObject
+@interface TWAvatarHome : NSObject
 
 // Method / Functions
 - (void)loadGameAndAvatars;

@@ -9,11 +9,11 @@
 #import "AvatarParser.h"
 
 // Priavte property to hold the game object
-@interface Avatar()
+@interface TWAvatarHome()
 @property (nonatomic, strong) NSArray *gameModelObjects;
 @end
 
-@implementation Avatar
+@implementation TWAvatarHome
 
 @synthesize gameModelObjects = _gameModelObjects;
 

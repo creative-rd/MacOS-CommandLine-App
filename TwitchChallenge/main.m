@@ -6,9 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TWAvatarHome.h"
 #import "ConsoleIO.h"
 #import "TWFileManager/TWFileManager.h"
+#import "TWAvatarHome/TWAvatarHome.h"
 
 BOOL isGivenPathValid(NSString* pathName) {
   if (![pathName isEqualToString:@""]) {
@@ -26,7 +26,8 @@ void initializeAvatar() {
   NSString* inputPath = [consoleIOObj getInput];
   NSString* trimmedPath = [inputPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   if (isGivenPathValid(trimmedPath)) {
-    NSLog(@"VALID PATH");
+    TWAvatarHome *home = [[TWAvatarHome alloc] init];
+    [home loadGameAndAvatars];
   } else {
     NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
     exit(1);
