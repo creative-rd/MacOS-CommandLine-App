@@ -21,12 +21,12 @@
 - (void) listGamesAndAvatars {
   if (_gameModelObjects.count > 0) {
     for(TWGameModel* game in _gameModelObjects) {
-      NSLog(@"Game = %@", game.name);
+      NSLog(@"*************************************************************");
+      NSLog(@"Game => %@", game.name);
       NSArray* avatarData = [game parseAvatarData];
       for(TWAvatarModel* avatar in avatarData) {
-        NSLog(@"Avatar %@", avatar.name);
+        NSLog(@"Avatar => %@", avatar.name);
       }
-      NSLog(@"***********************");
     }
   } else {
     NSLog(@"Oh ! There is no game and avatars");
