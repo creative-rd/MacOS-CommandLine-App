@@ -17,6 +17,22 @@
 
 @synthesize gameModelObjects = _gameModelObjects;
 
+// Getter to return the Game Model Object
+- (void) listGamesAndAvatars {
+  if (_gameModelObjects.count > 0) {
+    for(GameModel* game in _gameModelObjects) {
+      NSLog(@"Game = %@", game.name);
+      NSArray* avatarData = [game parseAvatarData];
+      for(AvatarModel* avatar in avatarData) {
+        NSLog(@"Avatar %@", avatar.name);
+      }
+      NSLog(@"***********************");
+    }
+  } else {
+    NSLog(@"Oh ! There is no game and avatars");
+  }
+}
+
 - (void)loadGameAndAvatars {
   NSArray *jsonFileData = [self JSONFromFile];
   if ([jsonFileData count] > 0) {
@@ -40,11 +56,6 @@
     json = [NSJSONSerialization JSONObjectWithData: [myJSON dataUsingEncoding: NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error:&error];
   }
   return json;
-}
-
-// Getter to return the Game Model Object
-- (NSArray *)modelObjects {
-  return _gameModelObjects;
 }
 
 @end

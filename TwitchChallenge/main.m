@@ -28,6 +28,7 @@ void initializeAvatar() {
   if (isGivenPathValid(trimmedPath)) {
     TWAvatarHome *home = [[TWAvatarHome alloc] init];
     [home loadGameAndAvatars];
+    [home listGamesAndAvatars];
   } else {
     NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
     exit(1);

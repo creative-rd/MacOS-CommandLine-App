@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 // Method / Functions
 - (void)loadGameAndAvatars;
 
-- (NSArray *)modelObjects;
+- (void)listGamesAndAvatars;
 
 @end
 
