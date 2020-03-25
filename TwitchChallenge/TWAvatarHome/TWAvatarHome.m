@@ -6,7 +6,7 @@
 //
 
 #import "TWAvatarHome.h"
-#import "AvatarParser.h"
+#import "TWAvatarParser.h"
 
 // Priavte property to hold the game object
 @interface TWAvatarHome()
@@ -20,10 +20,10 @@
 // Getter to return the Game Model Object
 - (void) listGamesAndAvatars {
   if (_gameModelObjects.count > 0) {
-    for(GameModel* game in _gameModelObjects) {
+    for(TWGameModel* game in _gameModelObjects) {
       NSLog(@"Game = %@", game.name);
       NSArray* avatarData = [game parseAvatarData];
-      for(AvatarModel* avatar in avatarData) {
+      for(TWAvatarModel* avatar in avatarData) {
         NSLog(@"Avatar %@", avatar.name);
       }
       NSLog(@"***********************");
@@ -36,7 +36,7 @@
 - (void)loadGameAndAvatars {
   NSArray *jsonFileData = [self JSONFromFile];
   if ([jsonFileData count] > 0) {
-    AvatarParser *parser = [[AvatarParser alloc] initWithJSONData: jsonFileData];
+    TWAvatarParser *parser = [[TWAvatarParser alloc] initWithJSONData: jsonFileData];
     _gameModelObjects = [parser gameModelData];
   }
 }

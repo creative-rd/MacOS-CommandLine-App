@@ -5,14 +5,14 @@
 //  Created by DUBEY, RAHUL on 3/23/20.
 //
 
-#import "GameModel.h"
+#import "TWGameModel.h"
 
 //Private Property
-@interface GameModel()
+@interface TWGameModel()
 @property (nonatomic, strong) NSMutableArray *avatarsObjects;
 @end
 
-@implementation GameModel
+@implementation TWGameModel
 
 @synthesize name = _name;
 @synthesize root = _root;
@@ -36,7 +36,7 @@
   for (int i = 0; i < [self.avatars count]; i++)  {
     NSString *name = [[self.avatars objectAtIndex: i] objectForKey:@"name"];
     NSString *url = [[self.avatars objectAtIndex: i] objectForKey:@"url"];
-    AvatarModel *avatarModel = [[AvatarModel alloc] initWithAvatarData: name andURL: url];
+    TWAvatarModel *avatarModel = [[TWAvatarModel alloc] initWithAvatarData: name andURL: url];
     [_avatarsObjects addObject: avatarModel];
   }
   return _avatarsObjects;

@@ -5,15 +5,15 @@
 //  Created by DUBEY, RAHUL on 3/24/20.
 //
 
-#import "ConsoleIO.h"
+#import "TWConsoleIO.h"
 
-@implementation ConsoleIO
+@implementation TWConsoleIO
 
 + (instancetype)sharedInstance {
-  static ConsoleIO *sharedInstance = nil;
+  static TWConsoleIO *sharedInstance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    sharedInstance = [[ConsoleIO alloc] init];
+    sharedInstance = [[TWConsoleIO alloc] init];
   });
   return sharedInstance;
 }

@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ConsoleIO : NSObject
+@interface TWConsoleIO : NSObject
 
 // Singleton Initializer
 + (instancetype)sharedInstance;

@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AvatarModel : NSObject
+@interface TWAvatarModel : NSObject
 
 - (instancetype) initWithAvatarData: (NSString *)name andURL: (NSString *)url;
 

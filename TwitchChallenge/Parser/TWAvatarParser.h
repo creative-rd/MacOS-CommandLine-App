@@ -6,11 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameModel.h"
+#import "TWGameModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AvatarParser : NSObject
+@interface TWAvatarParser : NSObject
 
 // Initializer
 

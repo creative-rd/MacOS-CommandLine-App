@@ -5,9 +5,9 @@
 //  Created by DUBEY, RAHUL on 3/23/20.
 //
 
-#import "AvatarModel.h"
+#import "TWAvatarModel.h"
 
-@implementation AvatarModel
+@implementation TWAvatarModel
 
 @synthesize name = _name;
 @synthesize url = _url;

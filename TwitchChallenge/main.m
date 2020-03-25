@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ConsoleIO.h"
-#import "TWFileManager/TWFileManager.h"
+#import "CommandLine/TWConsoleIO.h"
+#import "FileManager/TWFileManager.h"
 #import "TWAvatarHome/TWAvatarHome.h"
 
 BOOL isGivenPathValid(NSString* pathName) {
@@ -20,7 +20,7 @@ BOOL isGivenPathValid(NSString* pathName) {
 }
 
 void initializeAvatar() {
-  ConsoleIO *consoleIOObj = [ConsoleIO sharedInstance];
+  TWConsoleIO *consoleIOObj = [TWConsoleIO sharedInstance];
   [consoleIOObj writeMessage:@"**********  Welcome to Twitch Challenge  **********"];
   [consoleIOObj writeMessage:@"======> Please specify the directory to download the Game Images"];
   NSString* inputPath = [consoleIOObj getInput];

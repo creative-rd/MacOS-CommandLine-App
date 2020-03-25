@@ -1,17 +1,17 @@
 //
-//  AvatarParser.m
+//  TWAvatarParser.m
 //  TwitchChallenge
 //
 //  Created by DUBEY, RAHUL on 3/23/20.
 //
 
-#import "AvatarParser.h"
+#import "TWAvatarParser.h"
 
-@interface AvatarParser()
+@interface TWAvatarParser()
 @property (nonatomic, strong) NSMutableArray *gameMutableObjects;
 @end
 
-@implementation AvatarParser
+@implementation TWAvatarParser
 
 @synthesize gameMutableObjects = _gameMutableObjects;
 
@@ -30,7 +30,7 @@
     NSString *root = [[arrayObjects objectAtIndex: i] objectForKey:@"root"];
     NSInteger gameId = [[[arrayObjects objectAtIndex: i] objectForKey: @"gameId"] integerValue];
     NSArray *avatarsArray = [[arrayObjects objectAtIndex: i] objectForKey:@"avatars"];
-    GameModel *model = [[GameModel alloc] initWithGameData:name andRoot: root andGameId: gameId andAvatars: avatarsArray];
+    TWGameModel *model = [[TWGameModel alloc] initWithGameData:name andRoot: root andGameId: gameId andAvatars: avatarsArray];
     [_gameMutableObjects addObject: model];
   }
 }
