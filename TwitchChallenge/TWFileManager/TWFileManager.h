@@ -1,24 +1,22 @@
 //
-//  Avatar.h
+//  TWFileManager.h
 //  TwitchChallenge
 //
-//  Created by DUBEY, RAHUL on 3/23/20.
+//  Created by DUBEY, RAHUL on 3/24/20.
 //
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Avatar : NSObject
+@interface TWFileManager : NSObject
 
 // Initialize Method
 - (instancetype)initWithPath:(NSString *)path;
 
 // Method / Functions
-- (void)validateGivenPathName;
-- (void)loadGameAndAvatars;
+- (BOOL)isValidPathName;
 
-// Properties
 @property (strong, nonatomic) NSString *pathName;
 
 @end

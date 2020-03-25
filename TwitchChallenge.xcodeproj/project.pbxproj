@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3864A8A2429485200A61045 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864A892429485200A61045 /* Avatar.m */; };
+		D3864A8A2429485200A61045 /* TWAvatarHome.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864A892429485200A61045 /* TWAvatarHome.m */; };
 		D3864AA024296DD100A61045 /* avatarGame.json in Resources */ = {isa = PBXBuildFile; fileRef = D3864A90242968C500A61045 /* avatarGame.json */; };
 		D3864AA42429701900A61045 /* JSON.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3864A9A24296DC800A61045 /* JSON.bundle */; };
 		D3864AA824297E8400A61045 /* AvatarParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AA724297E8400A61045 /* AvatarParser.m */; };
 		D3864AAD2429949100A61045 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AAC2429949100A61045 /* GameModel.m */; };
 		D3864AB02429970A00A61045 /* AvatarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AAF2429970A00A61045 /* AvatarModel.m */; };
 		D3864AB42429EDD000A61045 /* ConsoleIO.m in Sources */ = {isa = PBXBuildFile; fileRef = D3864AB32429EDD000A61045 /* ConsoleIO.m */; };
+		D3BE4D5E242B1CF9003FC5F3 /* TWFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BE4D5D242B1CF9003FC5F3 /* TWFileManager.m */; };
 		D3EBEDED24269DD000D25015 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EBEDEC24269DD000D25015 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D3864A882429485200A61045 /* Avatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
-		D3864A892429485200A61045 /* Avatar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Avatar.m; sourceTree = "<group>"; };
+		D3864A882429485200A61045 /* TWAvatarHome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAvatarHome.h; sourceTree = "<group>"; };
+		D3864A892429485200A61045 /* TWAvatarHome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAvatarHome.m; sourceTree = "<group>"; };
 		D3864A90242968C500A61045 /* avatarGame.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avatarGame.json; sourceTree = "<group>"; };
 		D3864A9A24296DC800A61045 /* JSON.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSON.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3864A9C24296DC800A61045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +45,8 @@
 		D3864AAF2429970A00A61045 /* AvatarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarModel.m; sourceTree = "<group>"; };
 		D3864AB22429EDD000A61045 /* ConsoleIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsoleIO.h; sourceTree = "<group>"; };
 		D3864AB32429EDD000A61045 /* ConsoleIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsoleIO.m; sourceTree = "<group>"; };
+		D3BE4D5C242B1CF9003FC5F3 /* TWFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWFileManager.h; sourceTree = "<group>"; };
+		D3BE4D5D242B1CF9003FC5F3 /* TWFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWFileManager.m; sourceTree = "<group>"; };
 		D3EBEDE924269DD000D25015 /* TwitchChallenge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TwitchChallenge; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBEDEC24269DD000D25015 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,12 +69,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D3864A8B242960AC00A61045 /* Resources */ = {
+		D3864A8B242960AC00A61045 /* TWResources */ = {
 			isa = PBXGroup;
 			children = (
 				D3864A90242968C500A61045 /* avatarGame.json */,
 			);
-			path = Resources;
+			path = TWResources;
 			sourceTree = "<group>";
 		};
 		D3864A9B24296DC800A61045 /* JSON */ = {
@@ -82,25 +85,25 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		D3864AA524297E6200A61045 /* Parser */ = {
+		D3864AA524297E6200A61045 /* TWParser */ = {
 			isa = PBXGroup;
 			children = (
 				D3864AA624297E8400A61045 /* AvatarParser.h */,
 				D3864AA724297E8400A61045 /* AvatarParser.m */,
 			);
-			path = Parser;
+			path = TWParser;
 			sourceTree = "<group>";
 		};
-		D3864AA924297FC800A61045 /* Home */ = {
+		D3864AA924297FC800A61045 /* TWHome */ = {
 			isa = PBXGroup;
 			children = (
-				D3864A882429485200A61045 /* Avatar.h */,
-				D3864A892429485200A61045 /* Avatar.m */,
+				D3864A882429485200A61045 /* TWAvatarHome.h */,
+				D3864A892429485200A61045 /* TWAvatarHome.m */,
 			);
-			path = Home;
+			path = TWHome;
 			sourceTree = "<group>";
 		};
-		D3864AAA2429946D00A61045 /* DataModel */ = {
+		D3864AAA2429946D00A61045 /* TWDataModel */ = {
 			isa = PBXGroup;
 			children = (
 				D3864AAB2429949100A61045 /* GameModel.h */,
@@ -108,16 +111,25 @@
 				D3864AAE2429970A00A61045 /* AvatarModel.h */,
 				D3864AAF2429970A00A61045 /* AvatarModel.m */,
 			);
-			path = DataModel;
+			path = TWDataModel;
 			sourceTree = "<group>";
 		};
-		D3864AB12429EDB600A61045 /* CommandLine */ = {
+		D3864AB12429EDB600A61045 /* TWCommandLine */ = {
 			isa = PBXGroup;
 			children = (
 				D3864AB22429EDD000A61045 /* ConsoleIO.h */,
 				D3864AB32429EDD000A61045 /* ConsoleIO.m */,
 			);
-			path = CommandLine;
+			path = TWCommandLine;
+			sourceTree = "<group>";
+		};
+		D3BE4D5B242B1CBA003FC5F3 /* TWFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE4D5C242B1CF9003FC5F3 /* TWFileManager.h */,
+				D3BE4D5D242B1CF9003FC5F3 /* TWFileManager.m */,
+			);
+			path = TWFileManager;
 			sourceTree = "<group>";
 		};
 		D3EBEDE024269DD000D25015 = {
@@ -142,11 +154,12 @@
 			isa = PBXGroup;
 			children = (
 				D3EBEDEC24269DD000D25015 /* main.m */,
-				D3864AA924297FC800A61045 /* Home */,
-				D3864AB12429EDB600A61045 /* CommandLine */,
-				D3864AAA2429946D00A61045 /* DataModel */,
-				D3864AA524297E6200A61045 /* Parser */,
-				D3864A8B242960AC00A61045 /* Resources */,
+				D3BE4D5B242B1CBA003FC5F3 /* TWFileManager */,
+				D3864AA924297FC800A61045 /* TWHome */,
+				D3864AB12429EDB600A61045 /* TWCommandLine */,
+				D3864AAA2429946D00A61045 /* TWDataModel */,
+				D3864AA524297E6200A61045 /* TWParser */,
+				D3864A8B242960AC00A61045 /* TWResources */,
 			);
 			path = TwitchChallenge;
 			sourceTree = "<group>";
@@ -245,8 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3864A8A2429485200A61045 /* Avatar.m in Sources */,
+				D3864A8A2429485200A61045 /* TWAvatarHome.m in Sources */,
 				D3864AAD2429949100A61045 /* GameModel.m in Sources */,
+				D3BE4D5E242B1CF9003FC5F3 /* TWFileManager.m in Sources */,
 				D3864AB02429970A00A61045 /* AvatarModel.m in Sources */,
 				D3864AB42429EDD000A61045 /* ConsoleIO.m in Sources */,
 				D3EBEDED24269DD000D25015 /* main.m in Sources */,

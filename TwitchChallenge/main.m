@@ -6,22 +6,30 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Avatar.h"
+#import "TWAvatarHome.h"
 #import "ConsoleIO.h"
+#import "TWFileManager/TWFileManager.h"
+
+BOOL isGivenPathValid(NSString* pathName) {
+  if (![pathName isEqualToString:@""]) {
+    TWFileManager *fileManager = [[TWFileManager alloc] initWithPath: pathName];
+    BOOL isvalid =  [fileManager isValidPathName];
+    return isvalid;
+  }
+  return false;
+}
 
 void initializeAvatar() {
   ConsoleIO *consoleIOObj = [ConsoleIO sharedInstance];
-  [consoleIOObj writeMessage:@"**********  Welcome to the game application, Please provide a directory to download the gameImages  **********"];
+  [consoleIOObj writeMessage:@"**********  Welcome to Twitch Challenge  **********"];
+  [consoleIOObj writeMessage:@"======> Please specify the directory to download the Game Images"];
   NSString* inputPath = [consoleIOObj getInput];
-  // Read the directory provided by the user.
-  // 1. Initialize the Avaatar Class.
-  // 2. Validate the given path
-  // 3. Load the Game and Avatars from the Local JSON file.
-  NSLog(@"Input Path ==== %@", inputPath);
-  if (![inputPath isEqualToString:@""]) {
-    Avatar *avatarInstance = [[Avatar alloc] initWithPath: inputPath];
-    [avatarInstance validateGivenPathName];
-    [avatarInstance loadGameAndAvatars];
+  NSString* trimmedPath = [inputPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  if (isGivenPathValid(trimmedPath)) {
+    NSLog(@"VALID PATH");
+  } else {
+    NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
+    exit(1);
   }
 }
 
