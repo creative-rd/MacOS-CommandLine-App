@@ -10,18 +10,18 @@
 #import "ConsoleIO.h"
 
 void initializeAvatar() {
-  
-    ConsoleIO *consoleIOObj = [ConsoleIO sharedConsoleIOInstance];
-    NSArray *arguments = [[NSProcessInfo processInfo] arguments];
-    if (([arguments count] != 0) && ([arguments count] > 1)) {
-      //Arguments at [0] is the path for the binary
-      NSString *inputPath = arguments[1];
-      Avatar *avatarInstance = [[Avatar alloc] initWithPath: inputPath];
-      [avatarInstance validateGivenPathName];
-      [avatarInstance loadGameAndAvatars];
-    } else {
-      NSLog(@"Please supply at least one argument to proceed");
-      exit(1);
+  ConsoleIO *consoleIOObj = [ConsoleIO sharedInstance];
+  [consoleIOObj writeMessage:@"**********  Welcome to the game application, Please provide a directory to download the gameImages  **********"];
+  NSString* inputPath = [consoleIOObj getInput];
+  // Read the directory provided by the user.
+  // 1. Initialize the Avaatar Class.
+  // 2. Validate the given path
+  // 3. Load the Game and Avatars from the Local JSON file.
+  NSLog(@"Input Path ==== %@", inputPath);
+  if (![inputPath isEqualToString:@""]) {
+    Avatar *avatarInstance = [[Avatar alloc] initWithPath: inputPath];
+    [avatarInstance validateGivenPathName];
+    [avatarInstance loadGameAndAvatars];
   }
 }
 

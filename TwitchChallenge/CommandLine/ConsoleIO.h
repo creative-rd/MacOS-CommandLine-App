@@ -11,7 +11,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConsoleIO : NSObject
 
-+ (instancetype)sharedConsoleIOInstance;
+// Singleton Initializer
++ (instancetype)sharedInstance;
+
+// Write on console with message as NSString.
+- (void) writeMessage: (NSString*) message;
+
+// Get Input from the user as NSString.
+- (NSString*) getInput;
 
 @end
 

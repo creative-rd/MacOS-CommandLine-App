@@ -9,7 +9,7 @@
 
 @implementation ConsoleIO
 
-+ (instancetype)sharedConsoleIOInstance {
++ (instancetype)sharedInstance {
   static ConsoleIO *sharedInstance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
@@ -18,16 +18,17 @@
   return sharedInstance;
 }
 
-+ (id)allocWithZone:(NSZone *)zone {
-  static ConsoleIO *sharedInstance = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    sharedInstance = [super allocWithZone:zone];
-  });
-  return sharedInstance;
+// Print the message in console.
+- (void) writeMessage: (NSString*) message {
+  NSLog(@"%@", message);
 }
 
-+ (id)alloc {
-  return  [self allocWithZone:nil];
+// Get input message from the user.
+- (NSString*) getInput {
+  NSFileHandle* fileHandle = [NSFileHandle fileHandleWithStandardInput];
+  NSData *data = [fileHandle availableData];
+  NSString *result = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+  return [result stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
+
 @end
