@@ -23,7 +23,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		D3EBEDE724269DD000D25015 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
@@ -82,6 +82,13 @@
 				D33A41FD242E6C690065CF90 /* Utilities.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D33A41FF242E73740065CF90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D3864A8B242960AC00A61045 /* Resources */ = {
@@ -162,6 +169,7 @@
 				D3EBEDEB24269DD000D25015 /* TwitchChallenge */,
 				D3864A9B24296DC800A61045 /* JSON */,
 				D3EBEDEA24269DD000D25015 /* Products */,
+				D33A41FF242E73740065CF90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -443,6 +451,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/JSON/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -453,6 +464,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/JSON/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

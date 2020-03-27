@@ -43,24 +43,33 @@
 - (NSURLSessionTask *)imageWithURL:(NSURL *)url
                            success:(void (^)(NSImage *image))success
                            failure:(void (^)(NSError *error))failure {
-  NSLog(@"Downlaod Image with URL %@", [url absoluteString]);
+  
+  dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
   NSURLSessionTask *task = [_imageSession dataTaskWithURL: url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     if (error != nil) {
-      NSLog(@"Error %@", error);
-      return failure(error);
+      dispatch_semaphore_signal(semaphore);
+      failure(error);
     }
-    
     if (response != nil) {
-      NSLog(@"Success Response %@", response);
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSImage *image = [[NSImage alloc] initWithData: data];
         if (image)
           success(image);
+          dispatch_semaphore_signal(semaphore);
       });
     }
   }];
   
   [task resume];
+  
+  if (![NSThread isMainThread]) {
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+  } else {
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW)) {
+      [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+    }
+  }
   return task;
 }
 

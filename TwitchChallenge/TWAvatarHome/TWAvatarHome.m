@@ -66,25 +66,39 @@ int AVATAR_LIMIT = 5;
 }
 
 - (void)downloadAvatarsToDirectory: (NSString*) path {
-  // Check if already have the avatars for the selected game before downloading the image.
+  dispatch_group_t group = dispatch_group_create();
+
+  dispatch_group_enter(group);
+  TWFileManager *fileManager = [TWFileManager sharedManager];
+  [fileManager deleteContentOfDirectory: path completion:^{
+    dispatch_group_leave(group);
+  }];
+  
+  dispatch_group_enter(group);
   if ([_shuffledAvatarsDictionary count] > 0) {
     for (TWAvatarModel *avatarModel in _shuffledAvatarsDictionary.allValues) {
-      NSString *fullPath = [Utilities fullPath: avatarModel.url];
-      [self downloadAvatars: fullPath];
+      NSString *url = [Utilities fullPath: avatarModel.url];
+      [self downloadAvatars: url imageName:avatarModel.name atPath: path];
     }
+    dispatch_group_leave(group);
   }
+  
+  dispatch_group_notify(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
+    NSLog(@"*****************Completed Deletion and Download********************");
+  });
 }
 
--(void) downloadAvatars:(NSString *) urlString {
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-    ImageDownloaderService *service = [ImageDownloaderService sharedService];
-    NSURL *url = [NSURL URLWithString: urlString];
-    [service imageWithURL: url success:^(NSImage *image) {
-      NSLog(@"Image Downloaded Success");
-    } failure:^(NSError *error) {
-      NSLog(@"Image Download Failed");
-    }];
-  });
+-(void) downloadAvatars:(NSString *) imageurl imageName: (NSString*)imgName atPath: (NSString*) pathName {
+  
+  ImageDownloaderService *service = [ImageDownloaderService sharedService];
+  TWFileManager *fileManager = [TWFileManager sharedManager];
+  
+  [service imageWithURL:[NSURL URLWithString: imageurl] success:^(NSImage * _Nonnull image) {
+    NSLog(@"Downloaded %@", imageurl);
+    [fileManager saveImage: image name: imgName path: pathName];
+  } failure:^(NSError * _Nonnull error) {
+    NSLog(@"Failed %@", imageurl);
+  }];
 }
 
 - (void)loadGameAndAvatars {
@@ -113,3 +127,4 @@ int AVATAR_LIMIT = 5;
 }
 
 @end
+

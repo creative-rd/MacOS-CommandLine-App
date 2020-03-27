@@ -12,8 +12,8 @@
 
 BOOL isGivenPathValid(NSString* pathName) {
   if (![pathName isEqualToString:@""]) {
-    TWFileManager *fileManager = [[TWFileManager alloc] initWithPath: pathName];
-    BOOL isvalid =  [fileManager isValidPathName];
+    TWFileManager *fileManager = [TWFileManager sharedManager];
+    BOOL isvalid =  [fileManager isValid: pathName];
     return isvalid;
   }
   return false;
@@ -36,7 +36,6 @@ void initializeAvatar() {
     NSString* selectedGame = [consoleIOObj getInput];
     [home loadRandomAvatars: selectedGame];
     [home downloadAvatarsToDirectory: inputPath];
-    
   } else {
     NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
     exit(1);

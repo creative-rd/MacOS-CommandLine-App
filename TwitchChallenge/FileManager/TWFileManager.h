@@ -12,10 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TWFileManager : NSObject
 
 // Initialize Method
-- (instancetype)initWithPath:(NSString *)path;
++ (id) sharedManager;
 
-// Method / Functions
-- (BOOL)isValidPathName;
+- (BOOL)isValid: (NSString*) pathName;
+
+- (void)saveImage:(NSImage*)image name:(NSString *)imageName path:(NSString*)pathName;
+
+- (void)deleteContentOfDirectory:(NSString*) path completion:(void (^)(void))completionBlock;
 
 @property (strong, nonatomic) NSString *pathName;
 
