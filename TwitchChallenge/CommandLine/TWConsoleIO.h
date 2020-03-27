@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 
 // Write on console with message as NSString.
+
 - (void) writeMessage: (NSString*) message;
 
 // Get Input from the user as NSString.

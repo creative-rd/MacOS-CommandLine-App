@@ -26,9 +26,16 @@ void initializeAvatar() {
   NSString* inputPath = [consoleIOObj getInput];
   NSString* trimmedPath = [inputPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   if (isGivenPathValid(trimmedPath)) {
+    
     TWAvatarHome *home = [[TWAvatarHome alloc] init];
     [home loadGameAndAvatars];
     [home listGamesAndAvatars];
+
+    [consoleIOObj writeMessage:@"**********  Select a game number from the above list *********"];
+    
+    NSString* selectedGame = [consoleIOObj getInput];
+    [home loadRandomAvatars: selectedGame];
+    
   } else {
     NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
     exit(1);

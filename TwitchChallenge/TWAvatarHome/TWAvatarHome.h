@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)listGamesAndAvatars;
 
+- (void) loadRandomAvatars: (NSString*) game;
+
+@property (nonatomic, strong) NSMutableDictionary *gameMapperDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

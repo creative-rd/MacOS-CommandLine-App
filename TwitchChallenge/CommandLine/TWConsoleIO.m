@@ -18,7 +18,7 @@
   return sharedInstance;
 }
 
-// Print the message in console.
+// Print the message in console
 - (void) writeMessage: (NSString*) message {
   NSLog(@"%@", message);
 }
