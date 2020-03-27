@@ -7,6 +7,8 @@
 
 #import "TWAvatarHome.h"
 #import "TWAvatarParser.h"
+#import "ImageDownloaderService.h"
+#import "Utilities.h"
 
 // Priavte property to hold the game object
 @interface TWAvatarHome()
@@ -43,24 +45,46 @@ int AVATAR_LIMIT = 5;
   NSNumber* gameId = [_gameMapperDictionary objectForKey: [NSNumber numberWithInt: (int)[game integerValue]]];
   if (gameId) {
     NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"gameId == %d", gameId.intValue];
-    NSArray *filteredArray = [_gameModelObjects filteredArrayUsingPredicate:bPredicate];
+    NSArray *filteredArray = [_gameModelObjects filteredArrayUsingPredicate: bPredicate];
     if ([filteredArray count] > 0 ) {
       _shuffledAvatarsDictionary = [[NSMutableDictionary alloc] initWithCapacity: AVATAR_LIMIT];
       TWGameModel *model = [filteredArray objectAtIndex: 0];
       NSArray *avatarData = [model parseAvatarData];
-      NSArray *randomAvatars = [self generate: AVATAR_LIMIT randomUniqueNumbersBetween: 0 upperLimit: (int)[avatarData count]];
+      NSArray *randomAvatars = [Utilities generate: AVATAR_LIMIT randomUniqueNumbersBetween: 0 upperLimit: (int)[avatarData count]];
       if ([randomAvatars count] > 0 && [randomAvatars count] > 0) {
         int index = 1;
+        NSLog(@"Game %@ has %lu avatars below are suggested %d avatars", model.name, (unsigned long)[avatarData count], AVATAR_LIMIT);
         for (NSString *ids in randomAvatars) {
-          NSString *avatarIndex = randomAvatars[ids.intValue];
-          TWAvatarModel *avatarModel = avatarData[avatarIndex.intValue];
+          TWAvatarModel *avatarModel = avatarData[ids.intValue];
           NSLog(@"%d %@", index, avatarModel.name);
-          [_shuffledAvatarsDictionary setObject: avatarIndex forKey: [NSNumber numberWithInt: index]];
+          [_shuffledAvatarsDictionary setObject: avatarModel forKey: [NSNumber numberWithInt: index]];
           index++;
         }
       }
     }
   }
+}
+
+- (void)downloadAvatarsToDirectory: (NSString*) path {
+  // Check if already have the avatars for the selected game before downloading the image.
+  if ([_shuffledAvatarsDictionary count] > 0) {
+    for (TWAvatarModel *avatarModel in _shuffledAvatarsDictionary.allValues) {
+      NSString *fullPath = [Utilities fullPath: avatarModel.url];
+      [self downloadAvatars: fullPath];
+    }
+  }
+}
+
+-(void) downloadAvatars:(NSString *) urlString {
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+    ImageDownloaderService *service = [ImageDownloaderService sharedService];
+    NSURL *url = [NSURL URLWithString: urlString];
+    [service imageWithURL: url success:^(NSImage *image) {
+      NSLog(@"Image Downloaded Success");
+    } failure:^(NSError *error) {
+      NSLog(@"Image Download Failed");
+    }];
+  });
 }
 
 - (void)loadGameAndAvatars {
@@ -88,19 +112,4 @@ int AVATAR_LIMIT = 5;
   return json;
 }
 
-
-- (NSArray *)generate:(int)n randomUniqueNumbersBetween:(int)lowerLimit upperLimit:(int)upperLimit {
-  NSMutableArray *randomNumberArray = [NSMutableArray arrayWithCapacity: upperLimit - lowerLimit];
-  for (int i = lowerLimit; i < upperLimit; i++) {
-    [randomNumberArray addObject:@(i)];
-  }
-  for (NSUInteger i = 0; i < [randomNumberArray count]; i++) {
-    int j = arc4random_uniform([randomNumberArray count]);
-    NSNumber *jNumber = randomNumberArray[j];
-    NSNumber *iNumber = randomNumberArray[i];
-    randomNumberArray[j] = iNumber;
-    randomNumberArray[i] = jNumber;
-  }
-  return [randomNumberArray subarrayWithRange: NSMakeRange(0, n)];
-}
 @end

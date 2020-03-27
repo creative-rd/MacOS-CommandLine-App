@@ -35,6 +35,7 @@ void initializeAvatar() {
     
     NSString* selectedGame = [consoleIOObj getInput];
     [home loadRandomAvatars: selectedGame];
+    [home downloadAvatarsToDirectory: inputPath];
     
   } else {
     NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
