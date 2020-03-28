@@ -14,15 +14,6 @@
 
 @implementation ImageDownloaderService
 
-+ (id)sharedService {
-  static ImageDownloaderService *service = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    service = [[self alloc] init];
-  });
-  return service;
-}
-
 - (id)init {
   self = [super init];
   if (self) {
@@ -34,7 +25,7 @@
     sessionImageConfiguration.timeoutIntervalForResource = 6;
     sessionImageConfiguration.HTTPMaximumConnectionsPerHost = 2;
     sessionImageConfiguration.requestCachePolicy = NSURLRequestUseProtocolCachePolicy;
-    
+
     _imageSession = [NSURLSession sessionWithConfiguration:sessionImageConfiguration delegate: nil delegateQueue: _operationQueue];
   }
   return self;
@@ -47,17 +38,23 @@
   dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
   NSURLSessionTask *task = [_imageSession dataTaskWithURL: url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
     if (error != nil) {
       dispatch_semaphore_signal(semaphore);
+      NSLog(@"Failed to download image with url = %@ with status code = %ld", url, (long)httpResponse.statusCode);
       failure(error);
     }
-    if (response != nil) {
+    if (response != nil && httpResponse.statusCode == 200) {
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSImage *image = [[NSImage alloc] initWithData: data];
-        if (image)
+        if (image) {
           success(image);
           dispatch_semaphore_signal(semaphore);
+        }
       });
+    } else {
+      failure(nil);
+      dispatch_semaphore_signal(semaphore);
     }
   }];
   

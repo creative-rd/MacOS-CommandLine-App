@@ -15,15 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithPath:(NSString *) pathName;
 
 // Method / Functions
-- (void)loadGameAndAvatars;
+-(void)loadGameAndAvatars;
 
-- (void)listGamesAndAvatars;
+-(void)listGamesAndAvatars;
 
-- (void)loadRandomAvatars: (NSString*) game;
+-(void)loadRandomAvatars: (NSString*) game;
 
-- (void)downloadAvatarsToDirectory;
+-(void)loadAvatars;
 
-- (void)processSelectedAvatar: (NSString*) selectedAvatar;
+-(void)processSelectedAvatar: (NSString*) selectedAvatar;
 
 @property (nonatomic, strong) NSMutableDictionary *gameMapperDictionary;
 

@@ -11,8 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageDownloaderService : NSObject
 
-+ (id)sharedService;
-
 - (NSURLSessionTask *)imageWithURL:(NSURL *)url
                            success:(void (^)(NSImage *image))success
                            failure:(void (^)(NSError *error))failure;

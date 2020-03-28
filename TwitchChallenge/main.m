@@ -10,6 +10,8 @@
 #import "FileManager/TWFileManager.h"
 #import "Home/TWAvatarHome.h"
 
+NSString* EXIT_KEY = @"r";
+
 BOOL isGivenPathValid(NSString* pathName) {
   if (![pathName isEqualToString:@""]) {
     TWFileManager *fileManager = [TWFileManager sharedManager];
@@ -35,20 +37,20 @@ void initializeAvatar() {
     
     NSString* selectedGame = [consoleIOObj getInput];
     [home loadRandomAvatars: selectedGame];
-    [home downloadAvatarsToDirectory];
+    [home loadAvatars];
     
     [consoleIOObj writeMessage:@"**********  Select an avatar number from the above list or > or <  *********"];
 
     NSString *selectedAvatar;
     do {
-      NSLog(@"Press R for a new Game anytime you want to restart!");
+      [consoleIOObj writeMessage:@"Press R for a new Game anytime you want to restart!"];
       selectedAvatar = [consoleIOObj getInput];
-      if ([selectedAvatar isEqualToString:@"R"]) {
+      if ([selectedAvatar.lowercaseString isEqualToString: EXIT_KEY]) {
         TWFileManager *fileManager = [TWFileManager sharedManager];
         [fileManager clearDirectory];
       }
       [home processSelectedAvatar: selectedAvatar];
-    } while (![selectedAvatar isEqualToString:@"R"]);
+    } while (![selectedAvatar isEqualToString: EXIT_KEY]);
     
   } else {
     [consoleIOObj writeMessage:@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed"];

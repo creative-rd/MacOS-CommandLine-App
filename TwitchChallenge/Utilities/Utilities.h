@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Utilities : NSObject
 
-+ (NSArray *)generate:(int)n randomUniqueNumbersBetween:(int)lowerLimit upperLimit:(int)upperLimit;
++ (NSArray *)generate:(int)n randomUniqueNumbersBetween:(int)lowerLimit upperLimit:(int)upperLimit  previousArrayObjects:(NSArray*) prevArray;
 
 + (NSString *)fullPath: (NSString *)fileName;
 

@@ -9,7 +9,7 @@
 
 @implementation Utilities
 
-+ (NSArray *)generate:(int)n randomUniqueNumbersBetween:(int)lowerLimit upperLimit:(int)upperLimit {
++ (NSArray *)generate:(int)n randomUniqueNumbersBetween:(int)lowerLimit upperLimit:(int)upperLimit  previousArrayObjects:(NSArray*) prevArray{
   NSMutableArray *randomNumberArray = [NSMutableArray arrayWithCapacity: upperLimit - lowerLimit];
   for (int i = lowerLimit; i < upperLimit; i++) {
     [randomNumberArray addObject:@(i)];
@@ -22,7 +22,18 @@
     randomNumberArray[j] = iNumber;
     randomNumberArray[i] = jNumber;
   }
-  return [randomNumberArray subarrayWithRange: NSMakeRange(0, n)];
+  NSArray *filteredArray = [Utilities filterUniqueElemenentFrom: randomNumberArray and: prevArray];
+  if ([filteredArray count] >= n) {
+    return [filteredArray subarrayWithRange: NSMakeRange(0, n)];
+  }
+  return randomNumberArray;
+}
+
++ (NSArray*) filterUniqueElemenentFrom: (NSArray*) array1 and:(NSArray*) array2 {
+  NSArray *filtered = [array1 filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    return ![array2 containsObject:evaluatedObject];
+  }]];
+  return filtered;
 }
 
 + (NSString *)fullPath: (NSString *)fileName {
