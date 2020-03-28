@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)deleteFiles:(NSString*) path except:(NSString*) exceptionFile completion:(void (^)(void))completionBlock;
 
+- (NSArray *)JSONFromFile;
+
+- (void)clearDirectory;
+
 @property (strong, nonatomic) NSString *pathName;
 
 @end

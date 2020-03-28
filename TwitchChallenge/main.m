@@ -27,7 +27,7 @@ void initializeAvatar() {
   NSString* trimmedPath = [inputPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   if (isGivenPathValid(trimmedPath)) {
     
-    TWAvatarHome *home = [[TWAvatarHome alloc] init];
+    TWAvatarHome *home = [[TWAvatarHome alloc] initWithPath: inputPath];
     [home loadGameAndAvatars];
     [home listGamesAndAvatars];
 
@@ -35,14 +35,23 @@ void initializeAvatar() {
     
     NSString* selectedGame = [consoleIOObj getInput];
     [home loadRandomAvatars: selectedGame];
-    [home downloadAvatarsToDirectory: inputPath];
+    [home downloadAvatarsToDirectory];
     
-    [consoleIOObj writeMessage:@"**********  Select an avatar number from the above list *********"];
+    [consoleIOObj writeMessage:@"**********  Select an avatar number from the above list or > or <  *********"];
 
-    NSString *selectedAvatar = [consoleIOObj getInput];
-    [home processSelectedAvatar: selectedAvatar atPath: inputPath];
+    NSString *selectedAvatar;
+    do {
+      NSLog(@"Press R for a new Game anytime you want to restart!");
+      selectedAvatar = [consoleIOObj getInput];
+      if ([selectedAvatar isEqualToString:@"R"]) {
+        TWFileManager *fileManager = [TWFileManager sharedManager];
+        [fileManager clearDirectory];
+      }
+      [home processSelectedAvatar: selectedAvatar];
+    } while (![selectedAvatar isEqualToString:@"R"]);
+    
   } else {
-    NSLog(@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed");
+    [consoleIOObj writeMessage:@"OOOPS !! specified path is invalid *** I'm so sorry please re-run the application to proceed"];
     exit(1);
   }
 }

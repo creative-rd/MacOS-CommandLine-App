@@ -14,6 +14,9 @@
 @interface TWAvatarHome()
 @property (nonatomic, strong) NSArray *gameModelObjects;
 @property (nonatomic, strong) NSMutableDictionary *shuffledAvatarsDictionary;
+@property (nonatomic, strong) NSMutableDictionary *previousAvatarsDictionary;
+@property (nonatomic, strong) NSString* currentGame;
+@property (nonatomic, strong) NSString* currentInputPath;
 @end
 
 @implementation TWAvatarHome
@@ -21,8 +24,19 @@
 @synthesize gameModelObjects = _gameModelObjects;
 @synthesize gameMapperDictionary = _gameMapperDictionary;
 @synthesize shuffledAvatarsDictionary = _shuffledAvatarsDictionary;
+@synthesize previousAvatarsDictionary = _previousAvatarsDictionary;
+@synthesize currentGame = _currentGame;
+@synthesize currentInputPath = _currentInputPath;
 
 int AVATAR_LIMIT = 5;
+
+-(instancetype)initWithPath:(NSString *) pathName {
+  self = [super init];
+  if (self) {
+    _currentInputPath = pathName;
+  }
+  return self;
+}
 
 // Getter to return the Game Model Object
 - (void) listGamesAndAvatars {
@@ -42,6 +56,9 @@ int AVATAR_LIMIT = 5;
 }
 
 - (void) loadRandomAvatars: (NSString*) game {
+  if (_currentGame == nil) {
+    _currentGame = [NSString stringWithString: game];
+  }
   NSNumber* gameId = [_gameMapperDictionary objectForKey: [NSNumber numberWithInt: (int)[game integerValue]]];
   if (gameId) {
     NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"gameId == %d", gameId.intValue];
@@ -65,7 +82,8 @@ int AVATAR_LIMIT = 5;
   }
 }
 
-- (void)downloadAvatarsToDirectory: (NSString*) path {
+- (void)downloadAvatarsToDirectory {
+  NSString *path = _currentInputPath;
   dispatch_group_t group = dispatch_group_create();
 
   dispatch_group_enter(group);
@@ -81,26 +99,49 @@ int AVATAR_LIMIT = 5;
     NSLog(@"*****************Download Started********************");
     for (TWAvatarModel *avatarModel in _shuffledAvatarsDictionary.allValues) {
       NSString *url = [Utilities fullPath: avatarModel.url];
-      [self downloadAvatars: url imageName:avatarModel.name atPath: path];
+      [self downloadAvatars: url imageName:avatarModel.name];
     }
     NSLog(@"*****************Download Completed********************");
     dispatch_group_leave(group);
   }
 }
 
-- (void)processSelectedAvatar: (NSString*) selectedAvatar atPath: (NSString*)path {
+- (void)processSelectedAvatar: (NSString*) selectedAvatar {
+  NSString *path = _currentInputPath;
   if ([_shuffledAvatarsDictionary count] > 0) {
-    TWAvatarModel *avatarModel = [_shuffledAvatarsDictionary objectForKey: [NSNumber numberWithInt: (int)[selectedAvatar integerValue]]];
-    TWFileManager *fileManager = [TWFileManager sharedManager];
-    [fileManager deleteFiles:path except:avatarModel.name completion:^{
-      NSLog(@"All avatars deleted except %@. Exit Mode ===", avatarModel.name);
-      exit(1);
-    }];
+    if ([selectedAvatar isEqualToString:@">"]) {
+      NSLog(@"Selected avatar > %@", _currentGame);
+      _previousAvatarsDictionary = [[NSMutableDictionary alloc] initWithDictionary: _shuffledAvatarsDictionary];
+      [self loadRandomAvatars: _currentGame];
+      [self downloadAvatarsToDirectory];
+    } else if ([selectedAvatar isEqualToString:@"<"]) {
+      if ([_previousAvatarsDictionary count] > 0) {
+        for (int index = 1; index <= _previousAvatarsDictionary.count; index++) {
+          TWAvatarModel *avatarModel = [_previousAvatarsDictionary objectForKey: [NSNumber numberWithInt: index]];
+          NSLog(@"%d %@", index, avatarModel.name);
+        }
+      } else {
+        NSLog(@"ah !! There are no previous avatars");
+      }
+    } else {
+      if ([[_shuffledAvatarsDictionary allKeys] containsObject:[NSNumber numberWithInt: (int)[selectedAvatar integerValue]]]) {
+        if ([_shuffledAvatarsDictionary count] > 0) {
+          TWAvatarModel *avatarModel = [_shuffledAvatarsDictionary objectForKey: [NSNumber numberWithInt: (int)[selectedAvatar integerValue]]];
+          TWFileManager *fileManager = [TWFileManager sharedManager];
+          [fileManager deleteFiles:path except:avatarModel.name completion:^{
+            NSLog(@"All avatars deleted except %@. Exit Mode ===", avatarModel.name);
+            exit(1);
+          }];
+        }
+      } else {
+        exit(1);
+      }
+    }
   }
 }
 
--(void) downloadAvatars:(NSString *) imageurl imageName: (NSString*)imgName atPath: (NSString*) pathName {
-  
+-(void) downloadAvatars:(NSString *) imageurl imageName: (NSString*)imgName {
+  NSString *pathName = _currentInputPath;
   ImageDownloaderService *service = [ImageDownloaderService sharedService];
   TWFileManager *fileManager = [TWFileManager sharedManager];
   
@@ -113,28 +154,12 @@ int AVATAR_LIMIT = 5;
 }
 
 - (void)loadGameAndAvatars {
-  NSArray *jsonFileData = [self JSONFromFile];
+  TWFileManager *fileManager = [TWFileManager sharedManager];
+  NSArray *jsonFileData = [fileManager JSONFromFile];
   if ([jsonFileData count] > 0) {
     TWAvatarParser *parser = [[TWAvatarParser alloc] initWithJSONData: jsonFileData];
     _gameModelObjects = [parser gameModelData];
   }
-}
-
-- (NSArray *)JSONFromFile {
-  NSURL *currentDirectoryURL = [NSURL fileURLWithPath:[[NSFileManager defaultManager] currentDirectoryPath]];
-  NSURL *bundleURL = [NSURL fileURLWithPath: @"JSON.bundle" relativeToURL: currentDirectoryURL];
-  NSBundle *bundle = [NSBundle bundleWithURL: bundleURL];
-  NSURL *filePath = [bundle URLForResource:@"avatarGame"
-                             withExtension:@"json"];
-  // Check for filePath else it can't find the content of the URL
-  NSArray *json;
-  if (filePath != nil) {
-    NSString *myJSON = [[NSString alloc] initWithContentsOfURL: filePath encoding: NSUTF8StringEncoding error: NULL];
-    NSError *error =  nil;
-    json = [[NSArray alloc] init];
-    json = [NSJSONSerialization JSONObjectWithData: [myJSON dataUsingEncoding: NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error:&error];
-  }
-  return json;
 }
 
 @end

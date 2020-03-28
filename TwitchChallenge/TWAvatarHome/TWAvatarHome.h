@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TWAvatarHome : NSObject
 
+-(instancetype)initWithPath:(NSString *) pathName;
+
 // Method / Functions
 - (void)loadGameAndAvatars;
 
@@ -19,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadRandomAvatars: (NSString*) game;
 
-- (void)downloadAvatarsToDirectory: (NSString*) path;
+- (void)downloadAvatarsToDirectory;
 
-- (void)processSelectedAvatar: (NSString*) selectedAvatar atPath: (NSString*)path;
+- (void)processSelectedAvatar: (NSString*) selectedAvatar;
 
 @property (nonatomic, strong) NSMutableDictionary *gameMapperDictionary;
 

@@ -8,7 +8,13 @@
 #import "TWFileManager.h"
 #import <AppKit/AppKit.h>
 
+@interface TWFileManager()
+@property (nonatomic, strong) NSString* currentInputPath;
+@end
+
 @implementation TWFileManager
+
+@synthesize currentInputPath = _currentInputPath;
 
 + (id)sharedManager {
   static TWFileManager *fileManager = nil;
@@ -27,12 +33,22 @@
     if ([fileManager fileExistsAtPath: pathName] == YES) {
       // Check if the given path from the user is 1. Readable 2. Writable and 3. Executable
       if ([fileManager isWritableFileAtPath: pathName] && [fileManager isReadableFileAtPath: pathName] && [fileManager isExecutableFileAtPath: pathName]) {
+        _currentInputPath = [NSString stringWithString:pathName];
         return true;
       }
     }
   }
   return false;
 }
+
+- (void)clearDirectory {
+  if (_currentInputPath != nil) {
+    [self deleteContentOfDirectory:_currentInputPath completion:^{
+      // Completion Handler !!
+    }];
+  }
+}
+
 
 - (void)saveImage:(NSImage*)image name:(NSString *)imageName path:(NSString*)pathName {
   @autoreleasepool {
@@ -87,6 +103,23 @@
     }
     completionBlock();
   }
+}
+
+- (NSArray *)JSONFromFile {
+  NSURL *currentDirectoryURL = [NSURL fileURLWithPath:[[NSFileManager defaultManager] currentDirectoryPath]];
+  NSURL *bundleURL = [NSURL fileURLWithPath: @"JSON.bundle" relativeToURL: currentDirectoryURL];
+  NSBundle *bundle = [NSBundle bundleWithURL: bundleURL];
+  NSURL *filePath = [bundle URLForResource:@"avatarGame"
+                             withExtension:@"json"];
+  // Check for filePath else it can't find the content of the URL
+  NSArray *json;
+  if (filePath != nil) {
+    NSString *myJSON = [[NSString alloc] initWithContentsOfURL: filePath encoding: NSUTF8StringEncoding error: NULL];
+    NSError *error =  nil;
+    json = [[NSArray alloc] init];
+    json = [NSJSONSerialization JSONObjectWithData: [myJSON dataUsingEncoding: NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error:&error];
+  }
+  return json;
 }
 
 @end
