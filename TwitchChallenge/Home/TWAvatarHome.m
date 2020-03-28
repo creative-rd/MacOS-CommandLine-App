@@ -11,7 +11,7 @@
 #import "Utilities.h"
 #import "TWConsoleIO.h"
 
-// Priavte property to hold the game object
+// Private property to hold the game object
 @interface TWAvatarHome()
 @property (nonatomic, strong) NSArray *gameModelObjects;
 @property (nonatomic, strong) NSSet *previousElements;
