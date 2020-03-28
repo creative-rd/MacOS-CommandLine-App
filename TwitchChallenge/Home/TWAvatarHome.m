@@ -14,7 +14,7 @@
 // Priavte property to hold the game object
 @interface TWAvatarHome()
 @property (nonatomic, strong) NSArray *gameModelObjects;
-@property (nonatomic, strong) NSMutableArray *previousElements;
+@property (nonatomic, strong) NSSet *previousElements;
 @property (nonatomic, strong) NSMutableDictionary *shuffledAvatarsDictionary;
 @property (nonatomic, strong) NSMutableDictionary *previousAvatarsDictionary;
 @property (nonatomic, strong) NSString* currentGame;
@@ -72,14 +72,14 @@ int AVATAR_LIMIT = 5;
       _shuffledAvatarsDictionary = [[NSMutableDictionary alloc] initWithCapacity: AVATAR_LIMIT];
       TWGameModel *model = [filteredArray objectAtIndex: 0];
       NSArray *avatarData = [model parseAvatarData];
-      NSArray *randomAvatars = [Utilities generate: AVATAR_LIMIT randomUniqueNumbersBetween:0 upperLimit: (int)[avatarData count] previousArrayObjects: _previousElements];
-      if([_previousElements isEqualToArray:randomAvatars]) {
+      NSSet *randomAvatars = [NSSet setWithArray:[Utilities generate: AVATAR_LIMIT randomUniqueNumbersBetween:0 upperLimit: (int)[avatarData count] previousArrayObjects: [[_previousElements allObjects] mutableCopy]]];
+      if([_previousElements isEqualToSet: randomAvatars]) {
         NSLog(@"Could not find unique avatars == EXIT the game");
         [self exitGame];
         return;
       } else {
-        _previousElements = [[NSMutableArray alloc] initWithArray: randomAvatars];
-        if ([randomAvatars count] > 0 && [randomAvatars count] > 0) {
+        _previousElements = [[NSSet alloc] initWithSet: randomAvatars];
+        if ([randomAvatars count] > 0) {
           int index = 1;
           NSLog(@"Game %@ has %lu avatars below are suggested %d avatars", model.name, (unsigned long)[avatarData count], AVATAR_LIMIT);
           for (NSString *ids in randomAvatars) {
@@ -95,17 +95,20 @@ int AVATAR_LIMIT = 5;
 }
 
 -(void) loadAvatars {
-  [self downloadAvatarsToDirectory:_shuffledAvatarsDictionary];
+  if ([_shuffledAvatarsDictionary count] > 0) {
+    [self downloadAvatarsToDirectory:_shuffledAvatarsDictionary];
+  } else {
+    NSLog(@"No avatars to load !!");
+  }
 }
 
 - (void)downloadAvatarsToDirectory: (NSDictionary*) gameObject  {
-  NSString *path = _currentInputPath;
   dispatch_group_t group = dispatch_group_create();
-
+  
   dispatch_group_enter(group);
-  NSLog(@"*****************Deletion Started********************");
-  [_fileManager deleteContentOfDirectory: path completion:^{
-    NSLog(@"*****************Deletion Completed********************");
+  NSLog(@"*****************Cleaning Existing Avatars********************");
+  [_fileManager deleteContentOfDirectory: _currentInputPath completion:^{
+    NSLog(@"*****************Clean Completed********************");
     dispatch_group_leave(group);
   }];
   
@@ -117,26 +120,6 @@ int AVATAR_LIMIT = 5;
       [self downloadAvatars: url imageName:avatarModel.name];
     }
     dispatch_group_leave(group);
-  }
-}
-
-- (void)processSelectedAvatar: (NSString*) selectedAvatar {
-  if ([_shuffledAvatarsDictionary count] > 0) {
-    if ([selectedAvatar isEqualToString:@">"]) {
-      NSLog(@"Selected avatar > %@", _currentGame);
-      _previousAvatarsDictionary = [[NSMutableDictionary alloc] initWithDictionary: _shuffledAvatarsDictionary];
-      [self loadRandomAvatars: _currentGame];
-      [self downloadAvatarsToDirectory: _shuffledAvatarsDictionary];
-    } else if ([selectedAvatar isEqualToString:@"<"]) {
-      if ([_previousAvatarsDictionary count] > 0) {
-        [self loadRandomAvatars: _currentGame];
-        [self downloadAvatarsToDirectory: _previousAvatarsDictionary];
-      } else {
-        NSLog(@"ah !! There are no previous avatars");
-      }
-    } else {
-      [self deleteAllAvatarsExceptSelectedAvatar: selectedAvatar];
-    }
   }
 }
 
@@ -161,6 +144,27 @@ int AVATAR_LIMIT = 5;
   }
 }
 
+- (void)processSelectedAvatar: (NSString*) selectedAvatar {
+  if ([selectedAvatar isEqualToString:@">"] && [_shuffledAvatarsDictionary count] > 0) {
+    NSLog(@"Selected avatar > %@", selectedAvatar);
+    _previousAvatarsDictionary = [[NSMutableDictionary alloc] initWithDictionary: _shuffledAvatarsDictionary];
+    [self loadRandomAvatars: _currentGame];
+    [self downloadAvatarsToDirectory: _shuffledAvatarsDictionary];
+  } else if ([selectedAvatar isEqualToString:@"<"]) {
+    if ([_previousAvatarsDictionary count] > 0) {
+      [self loadRandomAvatars: _currentGame];
+      [self downloadAvatarsToDirectory: _previousAvatarsDictionary];
+    } else {
+      NSLog(@"No unique avatars present try > for next unique avatars set");
+    }
+    [_previousAvatarsDictionary removeAllObjects];
+  } else {
+    if ([_shuffledAvatarsDictionary count] > 0) {
+      [self deleteAllAvatarsExceptSelectedAvatar: selectedAvatar];
+    }
+  }
+}
+
 -(void) deleteAllAvatarsExceptSelectedAvatar:(NSString*) selectedAvatar {
   if ([[_shuffledAvatarsDictionary allKeys] containsObject:[NSNumber numberWithInt: (int)[selectedAvatar integerValue]]]) {
     if ([_shuffledAvatarsDictionary count] > 0) {
@@ -176,8 +180,16 @@ int AVATAR_LIMIT = 5;
   }
 }
 
--(void) exitGame {
+-(void)exitGame {
+  [self cleanUp];
   exit(1);
+}
+
+-(void)cleanUp {
+  [_shuffledAvatarsDictionary removeAllObjects];
+  [_previousAvatarsDictionary removeAllObjects];
+  _fileManager = nil;
+  _currentInputPath = nil;
 }
 
 @end
