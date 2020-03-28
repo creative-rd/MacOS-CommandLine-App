@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "CommandLine/TWConsoleIO.h"
 #import "FileManager/TWFileManager.h"
-#import "TWAvatarHome/TWAvatarHome.h"
+#import "Home/TWAvatarHome.h"
 
 BOOL isGivenPathValid(NSString* pathName) {
   if (![pathName isEqualToString:@""]) {
