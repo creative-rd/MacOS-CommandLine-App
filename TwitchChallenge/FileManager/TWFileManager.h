@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)deleteContentOfDirectory:(NSString*) path completion:(void (^)(void))completionBlock;
 
+- (void)deleteFiles:(NSString*) path except:(NSString*) exceptionFile completion:(void (^)(void))completionBlock;
+
 @property (strong, nonatomic) NSString *pathName;
 
 @end

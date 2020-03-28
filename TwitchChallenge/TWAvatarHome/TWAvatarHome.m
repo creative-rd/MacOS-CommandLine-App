@@ -70,22 +70,33 @@ int AVATAR_LIMIT = 5;
 
   dispatch_group_enter(group);
   TWFileManager *fileManager = [TWFileManager sharedManager];
+  NSLog(@"*****************Deletion Started********************");
   [fileManager deleteContentOfDirectory: path completion:^{
+    NSLog(@"*****************Deletion Completed********************");
     dispatch_group_leave(group);
   }];
   
   dispatch_group_enter(group);
   if ([_shuffledAvatarsDictionary count] > 0) {
+    NSLog(@"*****************Download Started********************");
     for (TWAvatarModel *avatarModel in _shuffledAvatarsDictionary.allValues) {
       NSString *url = [Utilities fullPath: avatarModel.url];
       [self downloadAvatars: url imageName:avatarModel.name atPath: path];
     }
+    NSLog(@"*****************Download Completed********************");
     dispatch_group_leave(group);
   }
-  
-  dispatch_group_notify(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
-    NSLog(@"*****************Completed Deletion and Download********************");
-  });
+}
+
+- (void)processSelectedAvatar: (NSString*) selectedAvatar atPath: (NSString*)path {
+  if ([_shuffledAvatarsDictionary count] > 0) {
+    TWAvatarModel *avatarModel = [_shuffledAvatarsDictionary objectForKey: [NSNumber numberWithInt: (int)[selectedAvatar integerValue]]];
+    TWFileManager *fileManager = [TWFileManager sharedManager];
+    [fileManager deleteFiles:path except:avatarModel.name completion:^{
+      NSLog(@"All avatars deleted except %@. Exit Mode ===", avatarModel.name);
+      exit(1);
+    }];
+  }
 }
 
 -(void) downloadAvatars:(NSString *) imageurl imageName: (NSString*)imgName atPath: (NSString*) pathName {
@@ -94,7 +105,7 @@ int AVATAR_LIMIT = 5;
   TWFileManager *fileManager = [TWFileManager sharedManager];
   
   [service imageWithURL:[NSURL URLWithString: imageurl] success:^(NSImage * _Nonnull image) {
-    NSLog(@"Downloaded %@", imageurl);
+    NSLog(@"Downloaded %@", imgName);
     [fileManager saveImage: image name: imgName path: pathName];
   } failure:^(NSError * _Nonnull error) {
     NSLog(@"Failed %@", imageurl);

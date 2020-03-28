@@ -54,21 +54,37 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtPath:path];
     NSString *file;
-    if ([enumerator nextObject] == nil) {
-      NSLog(@"******** %@ is empty ********", path);
-    } else {
-      NSLog(@"******** Deleting previous avatars at %@ ********", path);
-    }
     while (file = [enumerator nextObject]) {
       NSError *error = nil;
       BOOL result = [fileManager removeItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
       if (!result && error) {
         NSLog(@"Error: %@", error);
       } else {
-        NSLog(@"Deleted File %@", file);
+        NSLog(@"Deleted %@", file);
       }
     }
-    NSLog(@"************************************************");
+    completionBlock();
+  }
+}
+
+- (void)deleteFiles:(NSString*) path except:(NSString*) exceptionFile completion:(void (^)(void))completionBlock {
+  @autoreleasepool {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtPath:path];
+    NSString *file;
+    while (file = [enumerator nextObject]) {
+      NSError *error = nil;
+      if ([file containsString: exceptionFile]) {
+        NSLog(@"Skipped %@", exceptionFile);
+      } else {
+        BOOL result = [fileManager removeItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
+        if (!result && error) {
+          NSLog(@"Error: %@", error);
+        } else {
+          NSLog(@"Deleted %@", file);
+        }
+      }
+    }
     completionBlock();
   }
 }

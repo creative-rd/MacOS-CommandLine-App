@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)downloadAvatarsToDirectory: (NSString*) path;
 
+- (void)processSelectedAvatar: (NSString*) selectedAvatar atPath: (NSString*)path;
+
 @property (nonatomic, strong) NSMutableDictionary *gameMapperDictionary;
 
 @end
