@@ -87,7 +87,7 @@ int AVATAR_LIMIT = 5;
       NSArray *avatarData = [model parseAvatarData];
       NSSet *randomAvatars = [NSSet setWithArray:[Utilities generate: AVATAR_LIMIT randomUniqueNumbersBetween:0 upperLimit: (int)[avatarData count] previousArrayObjects: [[_previousElements allObjects] mutableCopy]]];
       if([_previousElements isEqualToSet: randomAvatars]) {
-        NSLog(@"Could not find unique avatars == EXIT the game");
+        NSLog(@"Could not find 5 unique avatars so EXIT the game");
         [self exitGame];
         return;
       } else {
@@ -113,6 +113,7 @@ int AVATAR_LIMIT = 5;
     [self downloadAvatarsToDirectory:_shuffledAvatarsDictionary];
   } else {
     NSLog(@"No avatars to load !!");
+    [self exitGame];
   }
 }
 

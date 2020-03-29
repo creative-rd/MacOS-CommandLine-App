@@ -26,7 +26,7 @@
   if ([filteredArray count] >= n) {
     return [filteredArray subarrayWithRange: NSMakeRange(0, n)];
   }
-  return randomNumberArray;
+  return prevArray;
 }
 
 + (NSArray*) filterUniqueElemenentFrom: (NSArray*) array1 and:(NSArray*) array2 {
