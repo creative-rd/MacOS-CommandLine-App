@@ -44,7 +44,19 @@ int AVATAR_LIMIT = 5;
   return self;
 }
 
-// Getter to return the Game Model Object
+// loadGameAndAvatars: Load the game from the local JSON file
+- (void)loadGameAndAvatars {
+  NSArray *jsonFileData = [_fileManager JSONFromFile];
+  if ([jsonFileData count] > 0) {
+    TWAvatarParser *parser = [[TWAvatarParser alloc] initWithJSONData: jsonFileData];
+    _gameModelObjects = [parser gameModelData];
+  } else {
+    NSLog(@"Could not load data from local JSON file");
+  }
+}
+
+
+// listGamesAndAvatars: Parse and list the game from the local JSON file
 - (void) listGamesAndAvatars {
   if (_gameModelObjects.count > 0) {
     _gameMapperDictionary = [[NSMutableDictionary alloc] initWithCapacity: _gameModelObjects.count];
@@ -60,6 +72,7 @@ int AVATAR_LIMIT = 5;
   }
 }
 
+// loadRandomAvatars: Load random avatars from the selected game
 - (void) loadRandomAvatars: (NSString*) game {
   if (_currentGame == nil) {
     _currentGame = [NSString stringWithString: game];
@@ -94,6 +107,7 @@ int AVATAR_LIMIT = 5;
   }
 }
 
+// loadAvatars: Convinience method to load the avatars on start up
 -(void) loadAvatars {
   if ([_shuffledAvatarsDictionary count] > 0) {
     [self downloadAvatarsToDirectory:_shuffledAvatarsDictionary];
@@ -134,14 +148,6 @@ int AVATAR_LIMIT = 5;
   } failure:^(NSError * _Nonnull error) {
     NSLog(@"Failed** %@", imgName);
   }];
-}
-
-- (void)loadGameAndAvatars {
-  NSArray *jsonFileData = [_fileManager JSONFromFile];
-  if ([jsonFileData count] > 0) {
-    TWAvatarParser *parser = [[TWAvatarParser alloc] initWithJSONData: jsonFileData];
-    _gameModelObjects = [parser gameModelData];
-  }
 }
 
 - (void)processSelectedAvatar: (NSString*) selectedAvatar {
