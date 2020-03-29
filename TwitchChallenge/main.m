@@ -25,11 +25,12 @@ void initializeAvatar() {
   TWConsoleIO *consoleIOObj = [TWConsoleIO sharedInstance];
   [consoleIOObj writeMessage:@"**********  Welcome to Twitch Challenge  **********"];
   [consoleIOObj writeMessage:@"======> Please specify the directory to download the Game Images"];
-  NSString* inputPath = [consoleIOObj getInput];
+  NSString* inputPath = [[consoleIOObj getInput] stringByStandardizingPath];
   NSString* trimmedPath = [inputPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-  if (isGivenPathValid(trimmedPath)) {
+  NSString* standardPath = [[trimmedPath stringByStandardizingPath] stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+  if (isGivenPathValid(standardPath)) {
     
-    TWAvatarHome *home = [[TWAvatarHome alloc] initWithPath: inputPath];
+    TWAvatarHome *home = [[TWAvatarHome alloc] initWithPath: standardPath];
     [home loadGameAndAvatars];
     [home listGamesAndAvatars];
 
