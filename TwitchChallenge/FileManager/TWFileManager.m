@@ -112,11 +112,10 @@
   NSURL *filePath = [bundle URLForResource:@"avatarGame"
                              withExtension:@"json"];
   // Check for filePath else it can't find the content of the URL
-  NSArray *json;
+  NSArray* json = [[NSArray alloc] init];
   if (filePath != nil) {
     NSString *myJSON = [[NSString alloc] initWithContentsOfURL: filePath encoding: NSUTF8StringEncoding error: NULL];
     NSError *error =  nil;
-    json = [[NSArray alloc] init];
     json = [NSJSONSerialization JSONObjectWithData: [myJSON dataUsingEncoding: NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error:&error];
   }
   return json;

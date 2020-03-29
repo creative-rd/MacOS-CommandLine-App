@@ -78,7 +78,7 @@ int AVATAR_LIMIT = 5;
     _currentGame = [NSString stringWithString: game];
   }
   NSNumber* gameId = [_gameMapperDictionary objectForKey: [NSNumber numberWithInt: (int)[game integerValue]]];
-  if (gameId) {
+  if (gameId != nil) {
     NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"gameId == %d", gameId.intValue];
     NSArray *filteredArray = [_gameModelObjects filteredArrayUsingPredicate: bPredicate];
     if ([filteredArray count] > 0 ) {
